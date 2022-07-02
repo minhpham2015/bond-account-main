@@ -1,0 +1,110 @@
+.bonds-wrap-page {
+    .menu-col .bonds-menu__nav {
+        .item {
+            &.has-children-menu{
+                &:before{
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../images/icons/sub-menu.svg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    right: 0;
+                    top: calc(50% - 8px);
+                    transition: .3s ease all;  
+                }
+                span:hover{
+                    background-color: transparent;
+                    color: #ffffff;
+                }
+                &.active{
+                    &:before{
+                        transform: rotate(180deg);
+                    }
+                    .sub-menu{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            .sub-menu{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                background: #FFFFFF;
+                box-shadow: 10px 4px 20px 5px #00000008;
+                border-radius: 10px;
+                width: 245px;
+                padding: 20px 32px;
+                position: absolute;
+                right: -276px;
+                top: 16px;
+                opacity: 0;
+                visibility: hidden;
+                li a{
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 36px;
+                    color: #294AA2;
+                    padding: 8px 0;
+                    display: initial;
+                    width: 100%;
+                    color: #7C7C7C;
+                    border-radius: 0;
+                    &:hover{
+                        color: #294AA2;
+                        font-weight: 700;
+                        background-color: transparent;
+                    }
+                    &.current-item{
+                        color: #294AA2;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            @media (max-width: 1200.98px){
+                &.has-children-menu{
+                    &:before{
+                        top: 18px;
+                    }
+                }
+                .sub-menu{
+                    background: transparent;
+                    box-shadow: none;
+                    position: inherit;
+                    top: inherit;
+                    right: inherit;
+                    display: none;
+                    opacity: 1;
+                    visibility: visible;
+                    padding: 0 18px 0 40px;
+                    li a{
+                        color: #FFFFFF;
+                        padding: 0;
+                        &.current-item{
+                            color: #F5AF02;
+                            position: relative;
+                            &:before{
+                                content: "";
+                                width: 6px;
+                                height: 6px;
+                                background: #F5AF02;
+                                border-radius: 50%;
+                                display: block;
+                                position: absolute;
+                                left: -9px;
+                                top: calc(50% - 3px);
+                            }
+                        }
+                        &:hover{
+                            color: #F5AF02;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Job Booking</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="lib/js/moment.js"></script>
+    <script src="lib/js/jquery-3.6.0.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap datepicker CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-datepicker.min.css"/>
+    <!-- Bootstrap datepicker JS-->
+    <script src="lib/bootstrap/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="scss/main.css">
+    <link href="lib/select2/css/select2.min.css" rel="stylesheet" />
+    <script src="lib/select2/js/select2.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+    <script src="js/global.js"></script>
+    <script src="js/bonds-common.js"></script>
+    <script src="js/bonds-combobox.js"></script>
+</head>
+ 
+<body>
+
+    <div class="bonds-booking-page">
+        <div class="container-fluid bonds-wrap-page">
+            <div class="row">
+                <div class="col-xl-3 col-sm-12 menu-col">
+                    <!-- Start - Member menu at left column -->
+                    <div class="bonds-menu">
+                        <div class="bonds-menu__logo">
+                            <a href="JobBookingAccount.html">
+                                <img src="images/logo.svg" alt="logo">
+                            </a>
+                            <span class="toggle-menu-mobile">
+                                <img class="collapsed" src="images/icons/menu-toggle.svg" alt="">
+                                <img class="expanded" src="images/icons/menu-toggle-close.svg" alt="">
+                            </span>
+                        </div>
+
+                        <div class="bonds-menu__nav">
+                            <li class="item current">
+                                <a href="#">Job Booking</a>
+                            </li>
+                            <li class="item">
+                                <a href="#">Job Enquiry</a>
+                            </li>
+                            <li class="item">
+                                <a href="#">Job Quote Estimate</a>
+                            </li>
+                            <li class="item">
+                                <a href="#">Activity Report</a>
+                            </li>
+                            <li class="item has-children-menu">
+                                <span>Account Management</span>
+                                <ul class="sub-menu">
+                                    <li><a class="current-item" href="#">Manage Address</a></li>
+                                    <li><a href="#">Manage Cost Centre</a></li>
+                                    <li><a href="#">Billing Enquiry & Payments</a></li>
+                                    <li><a href="#">Fuel Levy Rates</a></li>
+                                    <li><a href="#">Change Password</a></li>
+                                    <li><a href="#">Service Parameters and Charges</a></li>
+                                    <li><a href="#">Upload eJob File</a></li>
+                                </ul>
+                            </li>
+                        </div>
+
+                        <div class="bonds-menu__bottom">
+                            <div class="bonds-menu__bottom__secured">
+                                <h4 class="title-secured">This site is secured</h4>
+                                <div class="list-img">
+                                    <img src="images/secured-one.svg" alt="secured">
+                                    <img src="images/secured-two.svg" alt="secured">
+                                </div>
+                            </div>
+
+                            <div class="bonds-menu__bottom__tips">
+                                <img class="icon" src="images/icons/alert.svg" alt="alert">
+                                <h4 class="title">Help Tips</h4>
+                                <div class="content">
+                                    <p>Check the “Daily Totals” tickbox at right if you want the enquiry result table to
+                                        display a subtotal of each days charges. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start - Member menu at left column -->
+                </div>
+
+                <div class="col-xl-9 col-sm-12 content-col">
+                    <!-- Start - Top bar information at the top -->
+                    <div class="top-bar">
+                        <div class="top-bar__heading">
+                            <h2>Job Booking - Account  A2 (Operations)</h2>
+                        </div>
+
+                        <div class="top-bar__account">
+                            <div class="top-bar__account--logged">
+                                <div class="notification">
+                                    <img class="new-notifi" src="images/icons/circle.svg">
+                                    <img src="images/icons/notifi.svg">
+                                </div>
+                                <div class="info-user has-children-menu">
+                                    <img class="thumb-user" src="images/user.svg" alt="user">
+                                    <div class="info-user__wrap">
+                                        <div class="meta">
+                                            <div class="name">Lorem Ipsum</div>
+                                            <div class="company">ABC Company</div>
+                                        </div>
+
+                                        <div class="toggle-info">
+                                            <svg width="6" height="5" viewBox="0 0 6 5" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.86603 4.5C3.48112 5.16667 2.51887 5.16667 2.13397 4.5L0.401924 1.5C0.0170235 0.833332 0.498149 -5.6841e-07 1.26795 -5.01112e-07L4.73205 -1.9827e-07C5.50185 -1.30972e-07 5.98298 0.833333 5.59808 1.5L3.86603 4.5Z"
+                                                    fill="#C4C4C4" />
+                                            </svg>
+                                        </div>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Help</a></li>
+                                            <li><a class="current-item" href="#">Contact Us</a></li>
+                                            <li><a href="#">Log out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End - Top bar information at the top -->
+
+                    <div class="bonds-body-wrap">
+                        <!-- Start - Dashboard content-->
+                        <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production
+                            purpose</div>
+
+                        <div class="content-body-booking">
+                            <div class="wrap-template">
+                                <form id="form-booking-accountA2" action="" method="post">
+                                    <div class="template-form bonds-step bonds-step-4">
+                                        <div class="col-12">
+                                            <div class="contact-info">
+                                                <div class="title">Job Booking Details</div>
+                                                <div class="content">
+                                                    <span>Does this consignment contain dangerous goods?</span>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="consignment" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="consignment" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>   
+                                                <div class="underline"></div> 
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-details">
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6 date datepicker">
+                                                    <label>Job Date</label>
+                                                    <input type="text" name="name-booking-a2" class="form-control" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text input-group-datepicker">
+                                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_993_1412)">
+                                                                <path d="M19 2.92188H18V1.92188C18 1.65666 17.8946 1.4023 17.7071 1.21477C17.5196 1.02723 17.2652 0.921875 17 0.921875C16.7348 0.921875 16.4804 1.02723 16.2929 1.21477C16.1054 1.4023 16 1.65666 16 1.92188V2.92188H8V1.92188C8 1.65666 7.89464 1.4023 7.70711 1.21477C7.51957 1.02723 7.26522 0.921875 7 0.921875C6.73478 0.921875 6.48043 1.02723 6.29289 1.21477C6.10536 1.4023 6 1.65666 6 1.92188V2.92188H5C3.67441 2.92346 2.40356 3.45076 1.46622 4.38809C0.528882 5.32543 0.00158786 6.59628 0 7.92188L0 19.9219C0.00158786 21.2475 0.528882 22.5183 1.46622 23.4557C2.40356 24.393 3.67441 24.9203 5 24.9219H19C20.3256 24.9203 21.5964 24.393 22.5338 23.4557C23.4711 22.5183 23.9984 21.2475 24 19.9219V7.92188C23.9984 6.59628 23.4711 5.32543 22.5338 4.38809C21.5964 3.45076 20.3256 2.92346 19 2.92188ZM2 7.92188C2 7.12623 2.31607 6.36316 2.87868 5.80055C3.44129 5.23795 4.20435 4.92188 5 4.92188H19C19.7956 4.92188 20.5587 5.23795 21.1213 5.80055C21.6839 6.36316 22 7.12623 22 7.92188V8.92188H2V7.92188ZM19 22.9219H5C4.20435 22.9219 3.44129 22.6058 2.87868 22.0432C2.31607 21.4806 2 20.7175 2 19.9219V10.9219H22V19.9219C22 20.7175 21.6839 21.4806 21.1213 22.0432C20.5587 22.6058 19.7956 22.9219 19 22.9219Z" fill="#294AA2"/>
+                                                                <path d="M12 17.4219C12.8284 17.4219 13.5 16.7503 13.5 15.9219C13.5 15.0934 12.8284 14.4219 12 14.4219C11.1716 14.4219 10.5 15.0934 10.5 15.9219C10.5 16.7503 11.1716 17.4219 12 17.4219Z" fill="#294AA2"/>
+                                                                <path d="M7 17.4219C7.82843 17.4219 8.5 16.7503 8.5 15.9219C8.5 15.0934 7.82843 14.4219 7 14.4219C6.17157 14.4219 5.5 15.0934 5.5 15.9219C5.5 16.7503 6.17157 17.4219 7 17.4219Z" fill="#294AA2"/>
+                                                                <path d="M17 17.4219C17.8284 17.4219 18.5 16.7503 18.5 15.9219C18.5 15.0934 17.8284 14.4219 17 14.4219C16.1716 14.4219 15.5 15.0934 15.5 15.9219C15.5 16.7503 16.1716 17.4219 17 17.4219Z" fill="#294AA2"/>
+                                                                </g>
+                                                                <defs>
+                                                                <clipPath id="clip0_993_1412">
+                                                                <rect width="24" height="24" fill="white" transform="translate(0 0.921875)"/>
+                                                                </clipPath>
+                                                                </defs>
+                                                            </svg>    
+                                                        </span>
+                                                    </div>
+                                                </div>  
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Time Ready</label>
+                                                    <input type="text" placeholder="00:00" id="timeready" name="timeready" required>
+                                                    <!-- <input type="text" placeholder="00:00" class="timepicker" name="timeready" required> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="booking-details">
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Delivery Time</label>
+                                                    <!-- <input type="text" placeholder="00:00" step="900" name="delivery" onfocus="this.type='time'" required> -->
+                                                     <input type="text" placeholder="00:00" id="timeDelivery"  name="delivery" required>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6 bond-field-delivery">   
+                                                    <label>Delivery Window</label>
+                                                    <input type="text" class="time-from" id="timeFrom" placeholder="From 00:00">
+                                                    <input type="text" class="time-to" id="timeTo" placeholder="To 00:00">
+                                                    <!-- <input type="text" placeholder="From 00:00" class="time-from" step="900" name="from" onfocus="this.type='time'" required>
+                                                    <input type="text" placeholder="To 00:00" class="time-to" step="900" name="to" onfocus="this.type='time'" required> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking-details">
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label id="combo1-label" class="combo-label">Delivery by Reason</label>
+                                                    <div class="combo js-select">
+                                                        <div aria-controls="listbox1" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="combo1-label" id="combo1" class="combo-input" role="combobox" tabindex="0">
+                                                        </div>
+                                                        <div class="combo-menu" role="listbox" id="listbox1" aria-labelledby="combo1-label" tabindex="-1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Delivery by Reason</label>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                                            Loose Container Loading
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div> -->
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Service Code</label>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="serviceDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                                            Loose Container Loading
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking-details">
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Your Name</label>
+                                                    <select class="js-example-basic-single" name="state">
+                                                        <option value="JC">Josh C</option>
+                                                        <option value="AL">Josh A</option>
+                                                        <option value="WY">WJosh Maee</option>
+                                                    </select>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <div class="content">
+                                                        <span>Insurance?</span>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="insurance" id="flexRadioDefault3">
+                                                            <label class="form-check-label" for="flexRadioDefault3">
+                                                                Yes
+                                                            </label>  
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="insurance" id="flexRadioDefault4">
+                                                            <label class="form-check-label" for="flexRadioDefault4">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking-details">
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Your Email / Mobile Number</label>
+                                                    <input type="text" name="name-booking-a2" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text input-group-datepicker">
+                                                            <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M17 0.421875H7C6.02823 0.423153 5.0779 0.70758 4.26521 1.24037C3.45252 1.77317 2.81271 2.53124 2.424 3.42188H1C0.734784 3.42188 0.48043 3.52723 0.292893 3.71477C0.105357 3.9023 0 4.15666 0 4.42188C0 4.68709 0.105357 4.94145 0.292893 5.12898C0.48043 5.31652 0.734784 5.42188 1 5.42188H2V7.42188H1C0.734784 7.42188 0.48043 7.52723 0.292893 7.71477C0.105357 7.9023 0 8.15666 0 8.42188C0 8.68709 0.105357 8.94145 0.292893 9.12898C0.48043 9.31652 0.734784 9.42188 1 9.42188H2V11.4219H1C0.734784 11.4219 0.48043 11.5272 0.292893 11.7148C0.105357 11.9023 0 12.1567 0 12.4219C0 12.6871 0.105357 12.9414 0.292893 13.129C0.48043 13.3165 0.734784 13.4219 1 13.4219H2V15.4219H1C0.734784 15.4219 0.48043 15.5272 0.292893 15.7148C0.105357 15.9023 0 16.1567 0 16.4219C0 16.6871 0.105357 16.9414 0.292893 17.129C0.48043 17.3165 0.734784 17.4219 1 17.4219H2V19.4219H1C0.734784 19.4219 0.48043 19.5272 0.292893 19.7148C0.105357 19.9023 0 20.1567 0 20.4219C0 20.6871 0.105357 20.9414 0.292893 21.129C0.48043 21.3165 0.734784 21.4219 1 21.4219H2.424C2.81271 22.3125 3.45252 23.0706 4.26521 23.6034C5.0779 24.1362 6.02823 24.4206 7 24.4219H17C18.3256 24.4203 19.5964 23.893 20.5338 22.9557C21.4711 22.0183 21.9984 20.7475 22 19.4219V5.42188C21.9984 4.09628 21.4711 2.82543 20.5338 1.88809C19.5964 0.950757 18.3256 0.423463 17 0.421875V0.421875ZM20 19.4219C20 20.2175 19.6839 20.9806 19.1213 21.5432C18.5587 22.1058 17.7956 22.4219 17 22.4219H7C6.20435 22.4219 5.44129 22.1058 4.87868 21.5432C4.31607 20.9806 4 20.2175 4 19.4219V5.42188C4 4.62623 4.31607 3.86316 4.87868 3.30055C5.44129 2.73795 6.20435 2.42188 7 2.42188H17C17.7956 2.42188 18.5587 2.73795 19.1213 3.30055C19.6839 3.86316 20 4.62623 20 5.42188V19.4219ZM12 12.4219C12.7956 12.4219 13.5587 12.1058 14.1213 11.5432C14.6839 10.9806 15 10.2175 15 9.42188C15 8.62623 14.6839 7.86316 14.1213 7.30055C13.5587 6.73795 12.7956 6.42188 12 6.42188C11.2044 6.42188 10.4413 6.73795 9.87868 7.30055C9.31607 7.86316 9 8.62623 9 9.42188C9 10.2175 9.31607 10.9806 9.87868 11.5432C10.4413 12.1058 11.2044 12.4219 12 12.4219ZM17 18.4219C17 18.6871 16.8946 18.9414 16.7071 19.129C16.5196 19.3165 16.2652 19.4219 16 19.4219C15.7348 19.4219 15.4804 19.3165 15.2929 19.129C15.1054 18.9414 15 18.6871 15 18.4219C15 17.6262 14.6839 16.8632 14.1213 16.3006C13.5587 15.7379 12.7956 15.4219 12 15.4219C11.2044 15.4219 10.4413 15.7379 9.87868 16.3006C9.31607 16.8632 9 17.6262 9 18.4219C9 18.6871 8.89464 18.9414 8.70711 19.129C8.51957 19.3165 8.26522 19.4219 8 19.4219C7.73478 19.4219 7.48043 19.3165 7.29289 19.129C7.10536 18.9414 7 18.6871 7 18.4219C7.211 11.8139 16.791 11.8159 17 18.4219Z" fill="#294AA2"/>
+                                                            </svg>  
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6 date datepicker">
+                                                    <label>Last Day of Availability</label>
+                                                    <input type="text" name="name-booking-a2" class="form-control" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text input-group-datepicker">
+                                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_993_1412)">
+                                                                <path d="M19 2.92188H18V1.92188C18 1.65666 17.8946 1.4023 17.7071 1.21477C17.5196 1.02723 17.2652 0.921875 17 0.921875C16.7348 0.921875 16.4804 1.02723 16.2929 1.21477C16.1054 1.4023 16 1.65666 16 1.92188V2.92188H8V1.92188C8 1.65666 7.89464 1.4023 7.70711 1.21477C7.51957 1.02723 7.26522 0.921875 7 0.921875C6.73478 0.921875 6.48043 1.02723 6.29289 1.21477C6.10536 1.4023 6 1.65666 6 1.92188V2.92188H5C3.67441 2.92346 2.40356 3.45076 1.46622 4.38809C0.528882 5.32543 0.00158786 6.59628 0 7.92188L0 19.9219C0.00158786 21.2475 0.528882 22.5183 1.46622 23.4557C2.40356 24.393 3.67441 24.9203 5 24.9219H19C20.3256 24.9203 21.5964 24.393 22.5338 23.4557C23.4711 22.5183 23.9984 21.2475 24 19.9219V7.92188C23.9984 6.59628 23.4711 5.32543 22.5338 4.38809C21.5964 3.45076 20.3256 2.92346 19 2.92188ZM2 7.92188C2 7.12623 2.31607 6.36316 2.87868 5.80055C3.44129 5.23795 4.20435 4.92188 5 4.92188H19C19.7956 4.92188 20.5587 5.23795 21.1213 5.80055C21.6839 6.36316 22 7.12623 22 7.92188V8.92188H2V7.92188ZM19 22.9219H5C4.20435 22.9219 3.44129 22.6058 2.87868 22.0432C2.31607 21.4806 2 20.7175 2 19.9219V10.9219H22V19.9219C22 20.7175 21.6839 21.4806 21.1213 22.0432C20.5587 22.6058 19.7956 22.9219 19 22.9219Z" fill="#294AA2"/>
+                                                                <path d="M12 17.4219C12.8284 17.4219 13.5 16.7503 13.5 15.9219C13.5 15.0934 12.8284 14.4219 12 14.4219C11.1716 14.4219 10.5 15.0934 10.5 15.9219C10.5 16.7503 11.1716 17.4219 12 17.4219Z" fill="#294AA2"/>
+                                                                <path d="M7 17.4219C7.82843 17.4219 8.5 16.7503 8.5 15.9219C8.5 15.0934 7.82843 14.4219 7 14.4219C6.17157 14.4219 5.5 15.0934 5.5 15.9219C5.5 16.7503 6.17157 17.4219 7 17.4219Z" fill="#294AA2"/>
+                                                                <path d="M17 17.4219C17.8284 17.4219 18.5 16.7503 18.5 15.9219C18.5 15.0934 17.8284 14.4219 17 14.4219C16.1716 14.4219 15.5 15.0934 15.5 15.9219C15.5 16.7503 16.1716 17.4219 17 17.4219Z" fill="#294AA2"/>
+                                                                </g>
+                                                                <defs>
+                                                                <clipPath id="clip0_993_1412">
+                                                                <rect width="24" height="24" fill="white" transform="translate(0 0.921875)"/>
+                                                                </clipPath>
+                                                                </defs>
+                                                            </svg>    
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="underline" style="margin-top: 60px;"></div>
+                                        <div class="cost-centre">
+                                            <div class="booking-details">
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field col-12 col-sm-6">
+                                                        <label>Cost Centre</label>
+                                                        <select class="js-example-basic-single" name="state">
+                                                            <option value="It">Internal</option>
+                                                            <option value="LCL">Loose Container Loading</option>
+                                                            <option value="AL">Alabama</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="bonds-field col-12 col-sm-6">
+                                                        <label>Your Reference</label>
+                                                        <textarea  class="your-reference" cols='1' rows='8' name="your-reference" required></textarea>
+                                                        <small><b>0</b> lines entered. Max 20 characters per line</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking-details">
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field col-12 col-sm-6">
+                                                        <label for="phone">Order Number</label>
+                                                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                                                    </div>
+                                                    <div class="bonds-field col-12 col-sm-6">
+                                                        <label for="instructions">Instructions</label>
+                                                        <textarea id="instructions" name="instructions" ></textarea>
+                                                        <small>23 characters remaining</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking-details">
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field col-12 col-sm-6 bonds-field-description">
+                                                        <label for="description">Goods Description</label>
+                                                        <input type="text" name="description" required>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="underline underline-hidemb"></div>
+                                        <div class="manage-job">
+                                            <div class="title">Manage Job Notifications</div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Job Status Messaging</label>
+                                                    <select class="bonds-manage-job-select select-hidden"
+                                                        name="eBook[0][bond_manage_job]">
+                                                        <option value="pod" selected>POD</option>
+                                                        <option value="pickedup">Picked up</option>
+                                                        <option value="delay">Driver Delay</option>
+                                                        <option value="confirm">Confirm Job Booking</option>
+                                                    </select>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Email / Mobile</label>
+                                                    <select class="bonds-email-phone-select select-hidden"
+                                                        name="eBook[0][bond_email_phone]">
+                                                        <option value="1" selected>Value 1</option>
+                                                        <option value="2">Value 2</option>
+                                                        <option value="3">Value 3</option>
+                                                        <option value="4">Value 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rt-buttons-controls multi">
+                                            <div class="button-submit not-shadow">
+                                                <input class="cta-button blue" type="submit" value="Add to Job">
+                                            </div>
+                                            <a class="cta-button yellow not-shadow" href="Javascript:;">Manage emails/phone..</a>
+                                        </div>
+                                        <div class="template-view responsive-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th id="jobStatus"><span>Job Status</span></th>
+                                                        <th>Email / SMS</th>
+                                                        <th class="heading">Permanent</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>POD</b></td>
+                                                        <td>joshc@bondstg.com.au</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="#">
+                                                                <img src="images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>  
+
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>POD</b></td>
+                                                        <td>01937773942</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="#">
+                                                                <img src="images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>Picked Up</b></td>
+                                                        <td>nathanc@bondstg.com.au</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="#">
+                                                                <img src="images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="underline  underline-hidemb"></div>
+                                        <div class="cost-centre feature">
+                                            <div class="title">Choose one of these special features if required:</div>
+                                            <div class="booking-details">
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field col-12 col-sm-6 bonds-field-description">
+                                                        <label for="feature">Special Feature</label>
+                                                        <select class="js-example-basic-single" name="feature">
+                                                            <option value="TL">Tail Lift</option>
+                                                            <option value="LCL">Loose Container Loading</option>
+                                                            <option value="AL">Alabama</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="underline underline-hidemb"></div>
+                                        <div class="cost-centre feature leg-number">
+                                            <div class="title-leg">
+                                                <p>Leg Number 1:</p>
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field bonds-field-description">
+                                                        <select class="js-example-basic-single pickup" name="pickup">
+                                                            <option value="TL">Pickup</option>
+                                                            <option value="AL">Alabama</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Bonds Store</label>
+                                                    <select class="bonds-manage-store-select select-hidden"
+                                                        name="bond-store">
+                                                        <option value="men" selected>Menzies IM - Menzies Imports</option>
+                                                        <option value="min">Menzies IM</option>
+                                                        <option value="mmp">Menzies Imports</option>
+                                                    </select>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Items</label>
+                                                    <input type="text" name="item" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Address Book</label>
+                                                    <select class="bonds-address-book-select select-hidden"
+                                                        name="address-book">
+                                                        <option value="pod" selected>POD</option>
+                                                        <option value="pickedup">Picked up</option>
+                                                        <option value="delay">Driver Delay</option>
+                                                        <option value="confirm">Confirm Job Booking</option>
+                                                    </select>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Weight</label>
+                                                    <input type="text" name="weight" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Company</label>
+                                                    <input type="text" name="company" required>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>No. of Pallets</label>
+                                                    <select class="bonds-pallets-select select-hidden"
+                                                        name="pallets">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Street Address</label>
+                                                    <input type="text" name="address" required>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Cubic Metres</label>
+                                                    <input type="number" name="metres" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Suburb / Town</label>
+                                                    <input type="text" name="town" required>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>References for this leg</label>
+                                                    <textarea  class="your-reference" cols='1' rows='8' name="leg-reference" required></textarea>
+                                                    <small><b>0</b> lines entered. Max 20 characters per line</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-two-field">
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Contact / Phone</label>
+                                                    <input type="text" name="ct-phone" required>
+                                                </div>
+                                                <div class="bonds-field col-12 col-sm-6">
+                                                    <label>Leg Instructions</label>
+                                                    <input type="text" name="instructions" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                            
+                                        <div class="underline underline-hidemb"></div>
+                                        <div class="cost-centre feature leg-number leg-number-2">
+                                            <div class="add-apply-wrapper" data-count="2"> 
+                                                <div class="manage-apply">    
+                                                    <div class="title-leg">  
+                                                        <div class="title-leg-inner title-leg-before">    
+                                                            <p>Leg Number 2:</p>
+                                                            <div class="col-two-field">
+                                                                <div class="bonds-field bonds-field-description">
+                                                                    <select class="js-example-basic-single pickup" name="pickup">
+                                                                        <option value="TL">Pickup</option>
+                                                                        <option value="AL">Alabama</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                        <div class="title-leg-inner title-leg-after"> 
+                                                            <p class="subtitle-two">Service Level:</p>
+                                                            <div class="col-two-field">
+                                                                <div class="bonds-field bonds-field-description">
+                                                                    <select class="js-example-basic-single pickup" name="pickup">
+                                                                        <option value="STD">STD</option>
+                                                                        <option value="AL">Alabama</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>     
+                                                    </div>
+                                            
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Bonds Store</label>
+                                                            <select class="bonds-manage-store-select select-hidden"
+                                                                name="bond-store">
+                                                                <option value="men" selected>Menzies IM - Menzies Imports</option>
+                                                                <option value="min">Menzies IM</option>
+                                                                <option value="mmp">Menzies Imports</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Items</label>
+                                                            <input type="text" name="item" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Address Book</label>
+                                                            <select class="bonds-address-book-select select-hidden"
+                                                                name="aBook">
+                                                                <option value="pod" selected>POD</option>
+                                                                <option value="pickedup">Picked up</option>
+                                                                <option value="delay">Driver Delay</option>
+                                                                <option value="confirm">Confirm Job Booking</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Weight</label>
+                                                            <input type="text" name="weight" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Company</label>
+                                                            <input type="text" name="company" required>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>No. of Pallets</label>
+                                                            <select class="bonds-pallets-select select-hidden"
+                                                                name="pallets">
+                                                                <option value="1" selected>1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Street Address</label>
+                                                            <input type="text" name="address" required>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Cubic Metres</label>
+                                                            <input type="number" name="metres" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Suburb / Town</label>
+                                                            <input type="text" name="town" required>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>References for this leg</label>
+                                                            <textarea  class="your-reference" cols='1' rows='8' name="leg-reference-2" required></textarea>
+                                                            <small><b>0</b> lines entered. Max 20 characters per line</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-two-field">
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Contact / Phone</label>
+                                                            <input type="text" name="ct-phone" required>
+                                                        </div>
+                                                        <div class="bonds-field col-12 col-sm-6">
+                                                            <label>Leg Instructions</label>
+                                                            <input type="text" name="instructions" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="title-leg title-leg-bottom row">
+                                                <p class="col-12 col-md-6">Please be advised that restrictions apply to additional legs</p>
+                                                <div class="col-12 col-md-6 col-two-field button-right">
+                                                    <div class="bonds-field bonds-field-description">
+                                                        <input class="add-button add" id="add-to-job" type="button" value="Add Another Leg">
+                                                    </div>
+                                                    <div class="bonds-field bonds-field-description">
+                                                        <a class="add-button remove" id="remove-to-job" href="javascript:void(0);">Add Return Leg</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="add-job-wrapper">
+                                            <div class="manage-job">
+                                                <div class="title">Manage Job Notifications</div>
+                                                <div class="col-two-field">
+                                                    <div class="bonds-field col-2">
+                                                        <label>Job Status Messaging</label>
+                                                        <select class="bonds-manage-job-select select-hidden"
+                                                            name="eBook[0][bond_manage_job]">
+                                                            <option value="pod" selected>POD</option>
+                                                            <option value="pickedup">Picked up</option>
+                                                            <option value="delay">Driver Delay</option>
+                                                            <option value="confirm">Confirm Job Booking</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="bonds-field col-2">
+                                                        <label>Email / Mobile</label>
+                                                        <select class="bonds-email-phone-select select-hidden"
+                                                            name="eBook[0][bond_email_phone]">
+                                                            <option value="1" selected>Value 1</option>
+                                                            <option value="2">Value 2</option>
+                                                            <option value="3">Value 3</option>
+                                                            <option value="4">Value 4</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        <!-- <div class="rt-buttons-controls multi">
+                                            <div class="button-submit not-shadow">
+                                                <input class="cta-button blue" id="add-to-job" type="button" value="Add to Job">
+                                            </div>
+                                            <a class="cta-button yellow not-shadow" id="remove-to-job" href="javascript:void(0);">Manage emails/phone..</a>
+                                        </div>
+
+                                        <div class="template-view responsive-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th id="jobStatus"><span>Job Status</span></th>
+                                                        <th>Email / SMS</th>
+                                                        <th class="heading">Permanent</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>POD</b></td>
+                                                        <td>joshc@bondstg.com.au</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="Javascript:;">
+                                                                <img src="./assets/images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>POD</b></td>
+                                                        <td>01937773942</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="Javascript:;">
+                                                                <img src="./assets/images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="select-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                                <label></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="job_status"><b>Picked Up</b></td>
+                                                        <td>nathanc@bondstg.com.au</td>
+                                                        <td class="select_permanent">
+                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                                <option value="n/a" selected>N/A</option>
+                                                                <option value="permanent">Permanent</option>
+                                                            </select>
+                                                        </td>
+                                                        <td class="remove-item hide">
+                                                            <a href="Javascript:;#">
+                                                                <img src="./assets/images/icons/remove_item.svg">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div> -->
+
+                                        <div class="st-bonds-buttons">
+                                            <a class="cta-button st-prev yellow" href="Javascript:;">Cancel Job Booking</a>
+                                            <a class="cta-button st-next" href="Javascript:;">Submit Job</a>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End - Dashboard content-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

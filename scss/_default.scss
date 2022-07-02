@@ -1,0 +1,312 @@
+@import "variable";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 125%;
+    overflow-x: hidden;
+    .container-fluid {
+      >.row {
+        margin: 0;
+      }
+    }
+    &.overflow-hidden{
+      overflow: hidden;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    strong, b{ font-weight: bold; } 
+    p { margin: 0 0 12px; }
+    img { max-width: 100%; }
+    input[type=checkbox], input[type=radio] {
+        display: none;
+        + label {
+           position: relative;
+           display: flex !important;
+           align-items: center !important;
+           font-size: 14px !important;
+           font-weight: 400 !important;
+           color: $color-secondary;
+           cursor: pointer;
+           &::before {
+               content: '';
+               width: 10px; height: 10px;
+               background: #FFFFFF;
+               border: 2px solid #FFFFFF;
+               outline: 0.5px solid #707070;
+               margin-right: 9px;
+           }
+        }
+        &:checked + label {
+            &::before { background: $color-primary; }  
+        }
+     }
+     input[type=radio] {
+        + label {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.1em;
+            color: $color-thirdary;    
+           &::before {
+               width: 20px; height: 20px;
+               border-radius: 100%;
+           }
+        }
+        &:checked + label {
+            &::before { background: $color-primary; }
+        }
+     }
+     input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+     textarea {
+          width: 100%;
+          border-radius: 10px;
+          border: 1px solid #294AA2;
+          height: 73px;
+          padding: 30px 50px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #000000;
+          background: #FFFFFF;
+          outline: none;
+          box-shadow: none;
+          &::placeholder { color: rgba(0, 0, 0, 0.24);}
+          &.invalid { border-color: red; }
+          &.is-valid {
+              background: rgba(141, 52, 106, 0.09);
+              border-color: rgba(77, 77, 77, 0.09);
+          }
+          &:focus {
+              border: 1px solid $color-primary;
+              background: #FFFFFF;
+          }
+      }
+      textarea {
+          font-family: $font-primary;
+          padding: 20px;
+      }
+  
+      /* start - remove Arrows/Spinners */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+         margin: 0;
+      }
+      input[type=number] { -moz-appearance: textfield; }
+      /* end - remove Arrows/Spinners */
+  
+      /* start - style button submit */
+      input[type=submit], input[type=button],
+      button, .btn, .cta-button{
+          background: $color-primary;
+          border: none;
+          border-radius: 86px;
+          min-height: 60px;
+          min-width: 207px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #FFFFFF;
+          font-family: $font-primary;
+          font-size: 18px;
+          line-height: 21px;
+          font-weight: bold;
+          padding: 19px 30.5px 20px;
+          text-decoration: none;
+          &.not-shadow{
+            &:after{
+              display: none;
+            }
+          }
+      }
+      input[type=submit], input[type=button], button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+          box-shadow: none;
+          cursor: pointer;
+      }
+
+      .button-submit{
+          position: relative;
+          z-index: 1;
+          &:after{
+            content: "";
+            width: calc(100% - 30px);
+            height: 68px;
+            filter: blur(43.0013px);
+            position: absolute;
+            top: 11px;
+            left: 15px;
+            background: rgba(25, 63, 246, 0.35);
+            z-index: -1;
+          }
+          &.not-shadow{
+            &:after{ display: none; }
+          }
+      }
+     
+      .cta-button{
+            position: relative;
+            z-index: 1;
+            &:after{
+                content: "";
+                width: calc(100% - 30px);
+                height: 68px;
+                filter: blur(43.0013px);
+                position: absolute;
+                top: 11px;
+                left: 15px;
+                z-index: -1;
+                background: rgba(25, 63, 246, 0.35);
+            }
+            &.yellow{
+                background: $color-secondary;
+                &:after{
+                    background: rgba(245, 175, 2, 0.35);
+                }
+            }
+            &.blue{
+                background: $color-primary;
+                &:after{
+                    background: rgba(25, 63, 246, 0.35);
+                }
+            }
+      }
+      /* end - style button submit */
+
+      /* start - tables */
+    .template-view{
+        &.responsive-table{
+          overflow-x: auto;
+        }
+        @media (max-width: $scr-tablet){
+          &.responsive-table table{
+            min-width: 700px;
+          }
+        }
+      }
+      table {
+          border-collapse: separate;
+          border-spacing: 0;
+            margin: 0;
+            width: 100%;
+            word-break: break-all;
+  
+          &::-webkit-scrollbar {
+            width:5px;
+            height:5px;
+            border-left:0;
+          }
+          &::-webkit-scrollbar-track {
+            background:none;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $color-primary;
+            border-radius:3px;
+          }
+
+          thead tr th{
+            border-bottom: 0.5px solid #C2D1D9;
+            &.heading{
+                text-align: center;
+            }
+          }
+  
+      }
+      tr {
+          &:nth-child(2n) {
+            // background: rgba(129, 3, 82, 0.09);
+            // box-shadow: rgba(0, 0, 0, 0.16) 0 1px 3px;
+          }
+          th{
+            white-space: nowrap;
+          }
+      }
+      tbody tr{
+        &:hover{
+          background: rgba(194, 209, 217, 0.2);
+        }
+      }
+      td, th {
+            text-align: left;
+            vertical-align: middle;
+          padding: 15px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.1em;
+          color: #7C7C7C;
+          border-bottom: 0.5px solid #C2D1D9;
+          b { font-weight: 900; }
+          a {
+            color: $color-primary;
+            &:hover { text-decoration: underline; }
+          }
+          @media (max-width: $scr-tablet) {
+              padding: 15px;
+              white-space: nowrap;
+          } 
+      }
+      td { color: #7C7C7C;}
+      th { font-weight: bold; }
+      /* end - tables */
+
+      @media (max-width: $scr-mb){
+        input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), textarea {
+          padding: 16px 24px;
+          height: 48px;    
+        }
+        input[type=submit], input[type=button], 
+        button, .btn, .cta-button{
+          min-height: 54px;
+          min-width: 190px;
+          padding: 16px 24px;
+          font-size: 16px;
+        }
+        textarea {   
+          padding: 10px 24px;
+        }
+      }
+
+      @media (max-width: 599.98px){
+        input[type=submit], input[type=button], 
+        button, .btn, .cta-button{
+          min-height: 48px;
+          min-width: 130px;
+          padding: 13px 24px;
+          font-size: 16px;
+        }
+      }
+}
+
+::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+    border-left:0;
+}
+::-webkit-scrollbar-track {
+    background:none;
+}
+::-webkit-scrollbar-thumb {
+    background: $color-primary;
+    border-radius:3px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}

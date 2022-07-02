@@ -1,0 +1,1285 @@
+@import "variable";
+.bonds-wrap-page{
+    background: #FFFFFF;
+    padding: 0;    
+    .menu-col{
+        transition: .3s ease all;
+        padding: 0;
+        .bonds-menu{
+            background: $color-primary;
+            padding: 33px 30px 30px;
+            top: 0;
+            z-index: 9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: sticky;    
+            &__logo{
+                text-align: center;
+                img{
+                    height: 38px;
+                    width: auto;
+                }
+                .toggle-menu-mobile{
+                    display: none;
+                }
+            }
+
+            &__nav{
+                margin-top: 73px;
+                display: block;
+                .item {
+                    list-style: none;
+                    position: relative;
+                    a, span{
+                        display: block;
+                        width: 100%;
+                        padding: 16px 19px 15px;
+                        border-radius: 10px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        position: relative;
+                        transition: .3s ease all;
+                        cursor: pointer;
+                        &.current, &:hover{
+                            background-color: $color-secondary;
+                            color: $color-primary;
+                        }
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 18px;
+                    }
+                }
+            }
+
+            &__bottom{
+                margin-top: 132px;
+                &__secured{
+                    padding: 19px 23px;
+                    background: #F4FBFF;
+                    border-radius: 10px;
+                    .title-secured{
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: $color-primary;
+                        margin: 0;
+                    }
+                    .list-img{
+                        display: flex;
+                        align-items: center;
+                        margin-top: 16px;
+                        img{
+                            display: block;
+                            &:not(:first-child){
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &__tips{
+                    margin-top: 23px;
+                    background: #F5AF02;
+                    border-radius: 10px;
+                    padding: 24px 22px;
+                    .icon{
+                        display: block;
+                    }
+                    .title{
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: #FFFFFF;
+                        margin: 10px 0 0;
+                    }
+                    .content{
+                        margin-top: 20px;
+                        color: #ffffff;
+                        * {
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: #FFFFFF;
+                        }
+                        p{
+                            margin-bottom: 16px;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        @media (max-width: 1200.98px){
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 6;
+            overflow: auto;
+            &.active{
+                height: 100vh;
+                overflow: auto;
+                .bonds-menu{
+                    height: 100%;
+                    justify-content: initial;
+                    overflow-y: auto;
+                    &__bottom{
+                        display: block;
+                    }
+                }
+            }
+            .bonds-menu{
+                min-height: initial;
+                padding: 0;
+                &__nav, &__bottom{
+                    display: none;
+                }
+                &__logo{
+                    position: relative;
+                    padding: 29px 30px 29px;
+                    .toggle-menu-mobile{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+
+                        position: absolute;
+                        top: calc(50% - 16px);
+                        right: 30px;
+                        img{
+                            height: auto;
+                            max-width: 100%;
+                        }
+                        .expanded{
+                            display: none;
+                        }
+                        &.active{
+                            .collapsed{
+                                display: none;
+                            }
+                            .expanded{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &__nav{
+                    max-width: 432px;
+                    width: 100%;
+                    padding: 0 16px;
+                    margin-top: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &__bottom{
+                    margin-top: 48px;
+                    width: calc(100% - 128px);
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-bottom: 24px;
+                    &__secured, &__tips{
+                        max-width: 400px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $scr-mb){
+            .bonds-menu{
+                &__logo{
+                    padding: 20px 16px;
+                    .toggle-menu-mobile{
+                        right: 16px;
+                    }
+                }
+                &__nav{
+                    padding: 0 30px;
+                    .item{
+                        &:not(:last-child){
+                            margin-bottom: 12px;
+                        }
+                    }
+                }
+                &__bottom{
+                    margin-top: 24px;
+                    width: calc(100% - 60px);
+                    &__secured, &__tips{
+                        max-width: 384px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .content-col{
+        padding: 0;
+        .top-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 28px 78px 28px 57px;
+            background: #FFFFFF;
+            box-shadow: 10px 5px 25px 5px rgba(0, 0, 0, 0.04);
+            &__heading {
+                width: calc( 100% - 186px );
+                padding-right: 24px;
+                h2{
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    color: #11175D;
+                    margin: 0;
+                }
+            }
+
+            &__account{
+                width: 186px;
+                &--login a{
+                    min-width: 92px;
+                    min-height: initial;
+                    padding: 15px 31px;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #FFFFFF;
+                }
+                &--logged{
+                    display: flex;
+                    align-items: center;
+                    padding: 6px 0px;
+                    .notification{
+                        position: relative;
+                        width: 32px;
+                        height: 32px;
+                        .new-notifi{
+                            width: 8px;
+                            height: 8px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                    .info-user{
+                        display: flex;
+                        align-items: center;
+                        padding-left: 12px;
+                        &.active {
+                            .sub-menu {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        .thumb-user{
+                            width: 32px;
+                            height: 32px;
+                            display: block;
+                        }
+                        &__wrap{
+                            padding-left: 9px;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            .meta{
+                                padding-right: 22px;
+                                .name{
+                                    font-weight: 700;
+                                    font-size: 12px;
+                                    line-height: 14px;
+                                    color: #000000;
+                                }
+                                .company{
+                                    font-weight: 400;
+                                    font-size: 10px;
+                                    line-height: 12px;
+                                    color: #C4C4C4;
+                                    margin-top: 1px;
+                                }
+                            }
+                            .toggle-info{
+                                width: 8px;
+                                height: 8px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            .sub-menu {
+                                margin: 0;
+                                list-style: none;
+                                background: #fff;
+                                -webkit-box-shadow: 10px 4px 20px 5px #00000008;
+                                box-shadow: 10px 4px 20px 5px #00000008;
+                                border-radius: 10px;
+                                width: 142px;
+                                padding: 20px 32px;
+                                position: absolute;
+                                right: 10px;
+                                top: 40px;
+                                opacity: 0;
+                                visibility: hidden;
+                                a {
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    line-height: 36px;
+                                    color: #7C7C7C;
+                                    text-decoration: none;
+                                    &:hover {
+                                        color: #294AA2;
+                                        font-weight: 700;
+                                    }
+                                }
+                                a.current-item {
+                                    font-weight: 700;
+                                    font-size: 12px;
+                                    line-height: 36px;
+                                    color: #294AA2;  
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bonds-body-wrap{
+            .wrap-template{
+                padding: 0 57px;
+            }
+            .bonds-warning{
+                background: #EE1F45;
+                padding: 14.5px 57px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+
+            form{  
+                .template-form{
+                    .booking-details {  
+                        input:-webkit-autofill,  
+                        textarea:-webkit-autofill,
+                        select:-webkit-autofill {
+                            -webkit-box-shadow: 0 0 0 1000px #f5f5f5 inset !important;
+                            -webkit-text-fill-color: #000000 !important;  
+                        }
+                    }
+                    .cost-centre {
+                        padding-bottom: 60px;
+                    }
+                    .feature {
+                        padding-top: 40px;    
+                    }
+                    .leg-number {
+                        border-top: 0; 
+                        margin-top: 0; 
+                        .title-leg {
+                            display: flex;
+                            background: rgba(194, 209, 217, 0.2);
+                            padding: 14px;
+                            padding-left: 24px;
+                            align-items: center;
+                            .title-leg-inner {
+                                display: flex;
+                                align-items: center;
+                            }
+                            p {
+                                font-weight: 700;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #11175D;
+                                margin-bottom: 0;
+                                margin-right: 31px;
+                            }
+                            .subtitle-two {
+                                margin-left: 50px;
+                            }
+                            .col-two-field {
+                                margin-top: 0;
+                                display: flex;
+                                .add-button {
+                                    background: #F5AF02;
+                                    border-radius: 5px;
+                                    padding: 10px 12px;
+                                    min-height: 36px;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    color: #fff;
+                                    min-width: 150px;
+                                    width: auto;
+                                    text-align: center; 
+                                }
+                                #remove-to-job {
+                                    margin-left: 15px;
+                                    text-decoration: none;
+                                }
+                                .custom-select-wrap {
+                                    height: 36px;
+                                    width: 127px;
+                                    .custom-select {
+                                        color: #fff;
+                                        background: #F5AF02;
+                                        padding: 10px 22px 10px 38px;
+                                        border: none;  
+                                        &:after {
+                                            background-image: url(../images/icons/Polygon14.svg);
+                                            top: 12px;
+                                            right: 12px;
+                                        }
+                                    }
+                                }
+                            }
+                            .button-right {
+                                .bonds-field-description {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                    .leg-number-2 {
+                        border-bottom: none;
+                        padding: 0;
+                        .manage-apply {
+                            margin-top: 40px;
+                        }
+                        .title-leg-bottom {
+                            margin-top: 52px;
+                            p {
+                                margin-right: 0;
+                            }
+                            .button-right {
+                                justify-content: right;   
+                            }
+                        }
+                    }
+                    .title{
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #11175D;
+                    }
+                    .content {
+                        display: flex;
+                        align-items: center;
+                        padding-top: 52px;
+                        padding-bottom: 30px;
+                        span {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: 0.1em;
+                            color: #000000;
+                        }
+                        .form-check {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    .underline {
+                        border-top: 3px solid #294aa2;
+                        border-top-right-radius: 5px;
+                        border-top-left-radius: 5px;
+                        border-bottom: 2px solid #294AA2;
+                        border-bottom-right-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                    }
+                    .col-two-field{
+                        margin-top: 53px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .bond-field-delivery {
+                            display: flex;
+                            .time-from {
+                                width: 50%;
+                                border-radius: 10px 0 0 10px;
+                            }
+                            .time-to {
+                                width: 50%;
+                                border-radius: 0 10px 10px 0;
+                                border-left: none !important;
+                            }
+                        }
+                        .bonds-field {
+                            position: relative;
+                            padding: 0;
+                            .content {
+                                border-bottom: 0;
+                                display: flex;
+                                height: 73px;
+                                padding-top: 30px;
+                            }
+                            label{
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+                                position: absolute;
+                                left: 35px;
+                                top: -7px;
+                                background: #ffffff;
+                                padding: 0 15px;
+                                z-index: 4;
+                            }
+                            small {
+                                font-weight: 400;
+                                font-size: 10px;
+                                line-height: 12px;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+                            }
+                            .form-check-label {
+                                position: relative;
+                                top: 0;
+                                padding: 0;
+                            }
+                            .input-group-append {   
+                                position: absolute;
+                                top: 15px;
+                                right: 45px;
+                                .input-group-datepicker {
+                                    background-color: transparent;
+                                    border: 0;
+                                }
+                            }
+                            .custom-select-wrap{
+                                cursor: pointer;
+                                display: inline-block;
+                                position: relative;
+                                font-size: 14px;
+                                line-height: 16px;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+                                height: 73px;
+                                width: 100%;
+
+                                .select-hidden{
+                                    visibility: hidden;
+                                    padding-right: 10px;
+                                    background: #FFFFFF;
+                                }
+                                .custom-select{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    border: 1px solid $color-primary;
+                                    background: #fff;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    display: block;
+                                    vertical-align: middle;
+                                    padding: 28px 50px;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+
+                                    &:after{
+                                        content: "";
+                                        width: 12px;
+                                        height: 12px;
+                                        background-image: url(../images/icons/ic_select.svg);
+                                        background-repeat: no-repeat;
+                                        position: absolute;
+                                        background-size: contain;
+                                        top: 30px;
+                                        right: 24px;
+                                        transition: ease .25s all;
+                                    }
+                                }
+                                .options{
+                                    display: none;
+                                    position: absolute;
+                                    top: 56px;
+                                    right: 12px;
+                                    left: 12px;
+                                    width: calc(100% - 24px);
+                                    z-index: 999;
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style: none;
+                                    border: 1px solid #fbfbfb;
+                                    background-color: #fff;
+                                    box-shadow: #00000029 0 3px 6px;
+                                    li{
+                                        margin: 0;
+                                        padding: 12px 22px;
+                                        border-bottom: 1px solid rgba(112,112,112,.11);
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                        letter-spacing: 0.1em;
+                                        color: #000000;
+                                        &.selected{
+                                            background: #294AA2;
+                                            color: #ffffff;
+                                        }
+                                        &:hover{
+                                            background: #294AA2;
+                                            color: #ffffff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .col-12{  
+                            input, .custom-select-wrap, .content, textarea, .btn-group { 
+                                width: calc(100% - 37.5px);
+                                height: 73px;
+                                .btn-secondary {
+                                    border: 1px solid #294AA2;
+                                    background: #fff;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    display: block;
+                                    vertical-align: middle;
+                                    padding: 28px 50px;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+                                    box-shadow: none;
+                                    text-align: left;
+                                    &:before {
+                                        content: "";
+                                        width: 12px;
+                                        height: 12px;
+                                        background-image: url(../images/icons/ic_select.svg);
+                                        background-repeat: no-repeat;
+                                        position: absolute;
+                                        background-size: contain;
+                                        top: 30px;
+                                        right: 24px;
+                                        -webkit-transition: ease .25s all;
+                                        transition: ease .25s all;
+                                    } 
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                                .dropdown-menu {
+                                    width: calc(100% - 24px);
+                                    z-index: 999;
+                                    padding: 0;
+                                    list-style: none;
+                                    border: 1px solid #fbfbfb;
+                                    background-color: #fff;
+                                    -webkit-box-shadow: #00000029 0 3px 6px;
+                                    box-shadow: #00000029 0 3px 6px;
+                                    li {
+                                        margin: 0;
+                                        padding: 8px 22px;
+                                        border-bottom: 1px solid rgba(112, 112, 112, 0.11);
+                                        font-weight: 400;
+                                        font-size: 14px;   
+                                        line-height: 16px;
+                                        letter-spacing: 0.1em;
+                                        &:hover {
+                                            background: #294AA2;
+                                            a {
+                                                color: #ffffff;
+                                                &:hover {
+                                                    background: #294AA2; 
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }  
+                            textarea {
+                                position: relative;
+                            }  
+                            textarea::-webkit-scrollbar-track
+                            {
+                                border-radius: 10px;
+                                background-color: #ffffff;
+                            }
+
+                            textarea::-webkit-scrollbar
+                            {
+                                width: 5px;
+                                background-color: #ffffff;
+                                position: absolute;
+                                top: 0;
+                                right: 10px;
+                            }
+
+                            textarea::-webkit-scrollbar-thumb
+                            {
+                                border-radius: 10px;
+                                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                                background-color: #C4C4C4;
+                                position: absolute;
+                                top: 0;
+                                right: 10px;
+                            }
+                            // textarea::-webkit-scrollbar {
+                            //     width:6px;
+                            //     border-left:0;
+                            // }
+                            // textarea::-webkit-scrollbar-track {
+                            //     background:#C4C4C4;
+                            //     position: absolute;
+                            // }
+                            // textarea::-webkit-scrollbar-thumb {
+                            //     background: #C4C4C4;
+                            // }
+                            &:last-child{
+                                label {
+                                    left: 70px;  
+                                }
+                                .form-check-label {
+                                    left: 0;
+                                }
+                                input, .custom-select-wrap, textarea, small, .btn-group {
+                                    margin-left: 37.5px;
+                                }
+                                .time-to {
+                                    margin-left: 0;     
+                                }
+                                .content {
+                                    margin-left: 37.5px;
+                                }
+                            }
+                        }
+                        .col-12.bonds-field-description {
+                            input, .custom-select-wrap {
+                                margin-left: 0px !important;
+                            }     
+                        }
+                    }
+
+                    .rt-buttons-controls{
+                        margin-top: 36px;
+                        &.multi{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .template-view{
+                        margin-top: 56px;
+                        margin-bottom: 60px;
+                        table{
+                            thead th{
+                                color: #000000;
+                                &:first-child{
+                                    padding: 0;
+                                    width: 54px;
+                                }
+                                &#jobStatus{
+                                    cursor: pointer;
+                                    span{
+                                        display: flex;
+                                        align-items: center;
+                                        &:after{
+                                            content: "";
+                                            background-image: url(../images/icons/ic_select.svg);
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: contain;
+                                            width: 12px;
+                                            height: 12px;
+                                            display: block;
+                                            margin-left: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                            tbody tr {
+                                &.clicked{
+                                    background: rgba(194, 209, 217, 0.2);
+                                }
+                                td{
+                                    input[type="checkbox"]{
+                                        display: block;
+                                    }
+                                    &.select-item{
+                                        padding: 0;
+                                        .checkbox{
+                                            width: 22px;
+                                            height: 22px;
+                                            border-radius: 5px;
+                                            position: relative;
+                                            margin: 0 auto;
+                                            margin-right: 0;
+                                            input{
+                                                margin: 0;
+                                                width: 22px;
+                                                height: 22px;
+                                                opacity: 0;
+                                                z-index: 3;
+                                                position: relative;
+                                                cursor: pointer;
+                                                &:checked~label::before{
+                                                    border-color: #294AA2;
+                                                    background: #294AA2;
+                                                    background-image: url(../images/icons/checked.svg);
+                                                    background-size: 70%;
+                                                    background-repeat: no-repeat;
+                                                    background-position: center;
+                                                }
+                                            }
+                                            label{
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                z-index: 2;
+                                                &:before{
+                                                    width: 22px;
+                                                    height: 22px;
+                                                    background: transparent;
+                                                    margin: 0;
+                                                    outline: none;
+                                                    border: 1px solid #C2D1D9;
+                                                    border-radius: 5px;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.job_status{
+                                        color: #000000;
+                                    }
+                                    &.select_permanent{
+                                        .custom-select-wrap{
+                                            position: relative;
+                                            height: 35px;
+                                            width: 127px;
+                                            margin: 0 auto;
+                                            .select-hidden{
+                                                visibility: hidden;
+                                            }
+                                            .custom-select{
+                                                position: absolute;
+                                                background: #294AA2;
+                                                top: 0;
+                                                right: 0;
+                                                bottom: 0;
+                                                left: 0;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                white-space: nowrap;
+                                                display: block;
+                                                vertical-align: middle;
+                                                border-radius: 5px;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 16px;
+                                                letter-spacing: 0.1em;
+                                                color: #ffffff;
+                                                padding: 10px 23px;
+                                                text-align: center;
+                                                cursor: pointer;
+                                                &.changed{
+                                                    background: #F5AF02;
+                                                }
+                                                &:after{
+                                                    content: "";
+                                                    width: 9px;
+                                                    height: 9px;
+                                                    background-image: url(../images/icons/select-w.svg);
+                                                    background-repeat: no-repeat;
+                                                    position: absolute;
+                                                    background-size: contain;
+                                                    top: 14px;
+                                                    right: 5px;
+                                                    transition: ease .25s all;
+                                                }
+                                            }
+                                            .options{
+                                                display: none;
+                                                list-style: none;
+                                                margin: 0px;
+                                                padding: 0px;
+                                                position: absolute;
+                                                background: rgb(255, 255, 255);
+                                                width: 100%;
+                                                box-shadow: #00000029 0px 3px 6px;
+                                                z-index: 999;
+                                                top: 30px;
+                                                left: 0;
+                                                li{ 
+                                                    cursor: pointer;
+                                                    padding: 8px;
+                                                    font-weight: 400;
+                                                    font-size: 14px;
+                                                    line-height: 16px;
+                                                    letter-spacing: 0.1em;
+                                                    color: #000000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.remove-item{
+                                        text-align: center;
+                                        &.hide a{
+                                            opacity: 0;
+                                            visibility: hidden;
+                                        }
+                                        img{
+                                            min-width: 24px;
+                                            width: 24px;
+                                            height: 24px;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                }
+                            }
+                            tbody tr:hover {
+                                td {
+                                    &.remove-item {
+                                        a {
+                                            opacity: 1;
+                                            visibility: visible;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .st-bonds-buttons{
+                        display: flex;
+                        margin-top: 56px;
+                        a:not(:first-child){
+                            margin-left: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1200.98px){
+            width: 100%;
+            padding-top: 100px;
+            .top-bar{
+                padding: 12px 29px;
+            }
+            .bonds-body-wrap {
+                .bonds-warning{
+                    padding: 14.5px 29px;
+                }
+                .wrap-template{
+                    padding: 0 29px;
+                    .manage-job{
+                        margin-top: 56px;
+                    }
+                }
+                form .template-form .col-two-field{
+                    margin-top: 32px;
+                    .col-12{
+                        width: calc(100% / 2 - 25px);
+                        &:last-child{
+                            margin-left: 50px;
+                        }
+                    }
+                    .bonds-field-description {
+                        &:last-child{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $scr-sm-tablet){
+            .bonds-body-wrap {
+                .bonds-warning{padding: 12px 16px;}
+                form .template-form .col-two-field {
+                    .bonds-field label{
+                        padding: 0 8px;
+                    }
+                }
+                .title-leg-bottom {
+                    p {
+                        
+                    }
+                    .col-two-field {
+                        justify-content: center;
+                        .add-button {
+
+                        }
+                    }
+                }
+            }
+
+        }
+        @media (max-width: $scr-mb){
+            padding-top: 82px;
+            .top-bar{ 
+                padding: 12px 16px;
+            }
+            .bonds-body-wrap {
+                .wrap-template{
+                    padding: 0 16px;
+                }
+                form .template-form {
+                    .cost-centre {
+                        padding-bottom: 0;
+                    }
+                    .contact-info {
+                        .content {
+                            padding-top: 30px;
+                            padding-bottom: 10px;
+                        }
+                    }
+                    .template-view {
+                        margin-bottom: 0;
+                        margin-top: 25px;
+                    }
+                    .underline-hidemb {
+                        border: 0;
+                    }
+                    .leg-number {
+                        .title-leg {
+                            .custom-select-wrap {
+                                select {
+                                    padding: 12px 24px !important;  
+                                }
+                            }
+                        }
+                    }
+                    .leg-number-2 {
+                        .title-leg {
+                            p {
+                                text-align: center;
+                            }
+                            .col-two-field {
+                                justify-content: center;
+                                 margin: 25px 0;
+                            }
+                            .button-right {
+                                flex-direction: inherit;
+                            }
+                        }
+                    }
+                    .col-two-field {
+                        .col-12{
+                            width: calc(100% / 2 - 16px);
+                            &:last-child{
+                                margin-left: 32px;
+                            }
+                        }
+                        .bonds-field-description {
+                            &:last-child{
+                                margin-left: 0;   
+                            }   
+                        }
+                        .bonds-field {
+                            .content {
+                                height: 48px;
+                                padding-top: 24px;
+                            }
+                            label{
+                                left: 16px;
+                                font-size: 13px;
+                            }
+                            .input-group-append {
+                                top: 7px;  
+                            }
+                            .custom-select-wrap {
+                                height: 48px !important;
+                                .custom-select{
+                                    padding: 22px 24px;
+                                    display: none;
+                                    &:after{
+                                        top: 24px;
+                                    }
+                                }
+                                .select-hidden{
+                                    visibility: visible;
+                                    border: 1px solid #294AA2;
+                                    border-radius: 10px;
+                                    outline: none;
+                                    width: 100%;
+                                    padding: 15px 24px;
+                                   
+        
+                                    -moz-appearance:none; /* Firefox */
+                                    -webkit-appearance:none; /* Safari and Chrome */
+                                    appearance:none;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    font-weight: 400;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+        
+                                    background-image: url(../images/icons/ic_select.svg);
+                                    background-repeat: no-repeat;
+                                    background-position: 95% center;
+                                    background-size: 12px;
+                                }
+                                .pickup {
+                                    color: #fff;
+                                    background: #F5AF02;
+                                    border: none;
+                                    background-image: url(../images/icons/Polygon14.svg) !important;
+                                    background-repeat: no-repeat;
+                                    background-position: 95% center;
+                                    background-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    .st-bonds-buttons{
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 599.98px){
+            .top-bar{
+                align-items: flex-start;
+                &__heading {
+                    width: calc(100% - 95px);
+                    h2{
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+                &__account{
+                    width: 95px;
+                    &--logged {
+                        padding: 0;
+                        .info-user__wrap {
+                            .meta {
+                                display: none;
+                            }
+                            .sub-menu {
+                                z-index: 9;
+                            }    
+                        }
+                    }
+                }
+            }
+            .bonds-body-wrap{
+                .wrap-template .manage-job{
+                    margin-top: 48px;
+                }
+                form {
+                    .template-form .col-two-field{
+                        flex-direction: column;
+                        .col-12{
+                            width: 100%;
+                            small {
+                                margin-left: 0 !important;
+                            }
+                            .content {
+                                margin-left: 0 !important;
+                            }
+                            input, .custom-select-wrap, textarea {
+                                width: 100%;
+                            }
+                            &:last-child{
+                                margin-left: 0;
+                                margin-top: 32px;
+                                input, .custom-select-wrap, textarea {
+                                    margin-left: 0;
+                                }    
+                                label {
+                                    left: 16px;
+                                }
+                            }
+                            .input-group-append {
+                                right: 15px;
+                            }
+                        }
+                    }
+                    .st-bonds-buttons a{
+                        &:not(:first-child){
+                            margin-left: 24px;
+                        }
+                    }
+                    .leg-number-2 {
+                        .title-leg {
+                            display: block !important;
+                            text-align: center;
+                            padding: 0;
+                            .subtitle-two {
+                                margin-left: 0 !important;  
+                            }
+                            .title-leg-inner {
+                                justify-content: center;
+                            }
+                        }
+                    }           
+                }
+            }
+        }
+        @media (max-width: 424.98px){
+           
+            .bonds-body-wrap {
+                form {
+                    .template-form {
+                        .rt-buttons-controls{
+                            margin-top: 24px;
+                            &.multi{
+                                flex-direction: column;
+                                .cta-button.yellow{
+                                    margin-left: 0;
+                                    margin-top: 16px;
+                                }
+                            }
+                        }
+                        .st-bonds-buttons a{
+                            &:not(:first-child){
+                                margin-left: 24px;
+                            }
+                        }
+                    }
+                    .template-view{
+                        margin-top: 48px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 360px) {
+            .button-right {
+                display: block;
+                .bonds-field-description {
+                    width: 100%;
+                    justify-content: center;
+                    #remove-to-job {
+                        margin-left: 0 !important;
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+._jw-tpk-container ol {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 412px) {
+    .datepicker-dropdown {
+        left: 0 !important;
+    }
+}

@@ -6,26 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Job Booking</title>
+
     <link href="lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <script src="lib/js/moment.js"></script>
+
     <script src="lib/js/jquery-3.6.0.min.js"></script>
+    <script src="lib/js/moment.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/js/jquery-3.6.0.min.js"></script>
+
     <!-- Bootstrap datepicker CSS -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-datepicker.min.css"/>
     <!-- Bootstrap datepicker JS-->
     <script src="lib/bootstrap/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="scss/main.css">
-    <link href="lib/select2/css/select2.min.css" rel="stylesheet" />
-    <script src="lib/select2/js/select2.min.js"></script>  
+
     <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
     <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.5/css/selectize.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.5/css/selectize.bootstrap5.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.5/js/standalone/selectize.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="scss/main.css">
     <script src="js/global.js"></script>
     <script src="js/bonds-common.js"></script>
-    <script src="js/bonds-combobox.js"></script>
+
 </head>
- 
+
 <body>
 
     <div class="bonds-booking-page">
@@ -160,8 +166,8 @@
                                                             No
                                                         </label>
                                                     </div>
-                                                </div>   
-                                                <div class="underline"></div> 
+                                                </div>
+                                                <div class="underline"></div>
                                             </div>
                                         </div>
 
@@ -184,10 +190,10 @@
                                                                 <rect width="24" height="24" fill="white" transform="translate(0 0.921875)"/>
                                                                 </clipPath>
                                                                 </defs>
-                                                            </svg>    
+                                                            </svg>
                                                         </span>
                                                     </div>
-                                                </div>  
+                                                </div>
                                                 <div class="bonds-field col-12 col-sm-6">
                                                     <label>Time Ready</label>
                                                     <input type="text" placeholder="00:00" id="timeready" name="timeready" required>
@@ -195,7 +201,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
+
                                         <div class="booking-details">
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
@@ -203,7 +209,7 @@
                                                     <!-- <input type="text" placeholder="00:00" step="900" name="delivery" onfocus="this.type='time'" required> -->
                                                      <input type="text" placeholder="00:00" id="timeDelivery"  name="delivery" required>
                                                 </div>
-                                                <div class="bonds-field col-12 col-sm-6 bond-field-delivery">   
+                                                <div class="bonds-field col-12 col-sm-6 bond-field-delivery">
                                                     <label>Delivery Window</label>
                                                     <input type="text" class="time-from" id="timeFrom" placeholder="From 00:00">
                                                     <input type="text" class="time-to" id="timeTo" placeholder="To 00:00">
@@ -215,39 +221,20 @@
                                         <div class="booking-details">
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
-                                                    <label id="combo1-label" class="combo-label">Delivery by Reason</label>
-                                                    <div class="combo js-select">
-                                                        <div aria-controls="listbox1" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="combo1-label" id="combo1" class="combo-input" role="combobox" tabindex="0">
-                                                        </div>
-                                                        <div class="combo-menu" role="listbox" id="listbox1" aria-labelledby="combo1-label" tabindex="-1">
-                                                        </div>
-                                                    </div>
+                                                    <label for="loose_container"> Delivery by Reason </label>
+                                                    <select id="loose_container" class="select-beast demo-default" name="loose_container" placeholder="Select a person...">
+                                                        <option value="1">Test 1</option>
+                                                        <option value="2">Test 2</option>
+                                                        <option value="3">Test 3</option>
+                                                    </select>
                                                 </div>
-                                                <!-- <div class="bonds-field col-12 col-sm-6">
-                                                    <label>Delivery by Reason</label>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                                                            Loose Container Loading
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div> -->
-                                                <div class="bonds-field col-12 col-sm-6">
+                                                <div class="bonds-field col-12 col-sm-6 select-box-right">
                                                     <label>Service Code</label>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="serviceDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-                                                            Loose Container Loading
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                          <li><a class="dropdown-item" href="#">Menu item</a></li>
-                                                        </ul>
-                                                    </div>
+                                                    <select class="select-beast" name="service_code">
+                                                        <option value="1">Test 1</option>
+                                                        <option value="2">Test 2</option>
+                                                        <option value="3">Test 3</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,7 +242,7 @@
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
                                                     <label>Your Name</label>
-                                                    <select class="js-example-basic-single" name="state">
+                                                    <select class="select-beast" name="state">
                                                         <option value="JC">Josh C</option>
                                                         <option value="AL">Josh A</option>
                                                         <option value="WY">WJosh Maee</option>
@@ -268,7 +255,7 @@
                                                             <input class="form-check-input" type="radio" name="insurance" id="flexRadioDefault3">
                                                             <label class="form-check-label" for="flexRadioDefault3">
                                                                 Yes
-                                                            </label>  
+                                                            </label>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio" name="insurance" id="flexRadioDefault4">
@@ -276,7 +263,7 @@
                                                                 No
                                                             </label>
                                                         </div>
-                                                    </div>    
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +276,7 @@
                                                         <span class="input-group-text input-group-datepicker">
                                                             <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M17 0.421875H7C6.02823 0.423153 5.0779 0.70758 4.26521 1.24037C3.45252 1.77317 2.81271 2.53124 2.424 3.42188H1C0.734784 3.42188 0.48043 3.52723 0.292893 3.71477C0.105357 3.9023 0 4.15666 0 4.42188C0 4.68709 0.105357 4.94145 0.292893 5.12898C0.48043 5.31652 0.734784 5.42188 1 5.42188H2V7.42188H1C0.734784 7.42188 0.48043 7.52723 0.292893 7.71477C0.105357 7.9023 0 8.15666 0 8.42188C0 8.68709 0.105357 8.94145 0.292893 9.12898C0.48043 9.31652 0.734784 9.42188 1 9.42188H2V11.4219H1C0.734784 11.4219 0.48043 11.5272 0.292893 11.7148C0.105357 11.9023 0 12.1567 0 12.4219C0 12.6871 0.105357 12.9414 0.292893 13.129C0.48043 13.3165 0.734784 13.4219 1 13.4219H2V15.4219H1C0.734784 15.4219 0.48043 15.5272 0.292893 15.7148C0.105357 15.9023 0 16.1567 0 16.4219C0 16.6871 0.105357 16.9414 0.292893 17.129C0.48043 17.3165 0.734784 17.4219 1 17.4219H2V19.4219H1C0.734784 19.4219 0.48043 19.5272 0.292893 19.7148C0.105357 19.9023 0 20.1567 0 20.4219C0 20.6871 0.105357 20.9414 0.292893 21.129C0.48043 21.3165 0.734784 21.4219 1 21.4219H2.424C2.81271 22.3125 3.45252 23.0706 4.26521 23.6034C5.0779 24.1362 6.02823 24.4206 7 24.4219H17C18.3256 24.4203 19.5964 23.893 20.5338 22.9557C21.4711 22.0183 21.9984 20.7475 22 19.4219V5.42188C21.9984 4.09628 21.4711 2.82543 20.5338 1.88809C19.5964 0.950757 18.3256 0.423463 17 0.421875V0.421875ZM20 19.4219C20 20.2175 19.6839 20.9806 19.1213 21.5432C18.5587 22.1058 17.7956 22.4219 17 22.4219H7C6.20435 22.4219 5.44129 22.1058 4.87868 21.5432C4.31607 20.9806 4 20.2175 4 19.4219V5.42188C4 4.62623 4.31607 3.86316 4.87868 3.30055C5.44129 2.73795 6.20435 2.42188 7 2.42188H17C17.7956 2.42188 18.5587 2.73795 19.1213 3.30055C19.6839 3.86316 20 4.62623 20 5.42188V19.4219ZM12 12.4219C12.7956 12.4219 13.5587 12.1058 14.1213 11.5432C14.6839 10.9806 15 10.2175 15 9.42188C15 8.62623 14.6839 7.86316 14.1213 7.30055C13.5587 6.73795 12.7956 6.42188 12 6.42188C11.2044 6.42188 10.4413 6.73795 9.87868 7.30055C9.31607 7.86316 9 8.62623 9 9.42188C9 10.2175 9.31607 10.9806 9.87868 11.5432C10.4413 12.1058 11.2044 12.4219 12 12.4219ZM17 18.4219C17 18.6871 16.8946 18.9414 16.7071 19.129C16.5196 19.3165 16.2652 19.4219 16 19.4219C15.7348 19.4219 15.4804 19.3165 15.2929 19.129C15.1054 18.9414 15 18.6871 15 18.4219C15 17.6262 14.6839 16.8632 14.1213 16.3006C13.5587 15.7379 12.7956 15.4219 12 15.4219C11.2044 15.4219 10.4413 15.7379 9.87868 16.3006C9.31607 16.8632 9 17.6262 9 18.4219C9 18.6871 8.89464 18.9414 8.70711 19.129C8.51957 19.3165 8.26522 19.4219 8 19.4219C7.73478 19.4219 7.48043 19.3165 7.29289 19.129C7.10536 18.9414 7 18.6871 7 18.4219C7.211 11.8139 16.791 11.8159 17 18.4219Z" fill="#294AA2"/>
-                                                            </svg>  
+                                                            </svg>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -310,7 +297,7 @@
                                                                 <rect width="24" height="24" fill="white" transform="translate(0 0.921875)"/>
                                                                 </clipPath>
                                                                 </defs>
-                                                            </svg>    
+                                                            </svg>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -322,7 +309,7 @@
                                                 <div class="col-two-field">
                                                     <div class="bonds-field col-12 col-sm-6">
                                                         <label>Cost Centre</label>
-                                                        <select class="js-example-basic-single" name="state">
+                                                        <select class="select-beast" name="state">
                                                             <option value="It">Internal</option>
                                                             <option value="LCL">Loose Container Loading</option>
                                                             <option value="AL">Alabama</option>
@@ -355,7 +342,7 @@
                                                         <input type="text" name="description" required>
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
                                         </div>
                                         <div class="underline underline-hidemb"></div>
                                         <div class="manage-job">
@@ -363,7 +350,7 @@
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
                                                     <label>Job Status Messaging</label>
-                                                    <select class="bonds-manage-job-select select-hidden"
+                                                    <select class="select-beast bonds-manage-job-select select-hidden"
                                                         name="eBook[0][bond_manage_job]">
                                                         <option value="pod" selected>POD</option>
                                                         <option value="pickedup">Picked up</option>
@@ -371,9 +358,9 @@
                                                         <option value="confirm">Confirm Job Booking</option>
                                                     </select>
                                                 </div>
-                                                <div class="bonds-field col-12 col-sm-6">
+                                                <div class="bonds-field col-12 col-sm-6 select-box-right">
                                                     <label>Email / Mobile</label>
-                                                    <select class="bonds-email-phone-select select-hidden"
+                                                    <select class="select-beast bonds-email-phone-select select-hidden"
                                                         name="eBook[0][bond_email_phone]">
                                                         <option value="1" selected>Value 1</option>
                                                         <option value="2">Value 2</option>
@@ -411,7 +398,7 @@
                                                         <td class="job_status"><b>POD</b></td>
                                                         <td>joshc@bondstg.com.au</td>
                                                         <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <select class="select-beast select-hidden" name="eBook[0][bond_permanent]">
                                                                 <option value="n/a" selected>N/A</option>
                                                                 <option value="permanent">Permanent</option>
                                                             </select>
@@ -421,7 +408,7 @@
                                                                 <img src="images/icons/remove_item.svg">
                                                             </a>
                                                         </td>
-                                                    </tr>  
+                                                    </tr>
 
                                                     <tr>
                                                         <td class="select-item">
@@ -433,7 +420,7 @@
                                                         <td class="job_status"><b>POD</b></td>
                                                         <td>01937773942</td>
                                                         <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <select class="select-beast select-hidden" name="eBook[0][bond_permanent]">
                                                                 <option value="n/a" selected>N/A</option>
                                                                 <option value="permanent">Permanent</option>
                                                             </select>
@@ -455,7 +442,7 @@
                                                         <td class="job_status"><b>Picked Up</b></td>
                                                         <td>nathanc@bondstg.com.au</td>
                                                         <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <select class="select-beast select-hidden" name="eBook[0][bond_permanent]">
                                                                 <option value="n/a" selected>N/A</option>
                                                                 <option value="permanent">Permanent</option>
                                                             </select>
@@ -476,7 +463,7 @@
                                                 <div class="col-two-field">
                                                     <div class="bonds-field col-12 col-sm-6 bonds-field-description">
                                                         <label for="feature">Special Feature</label>
-                                                        <select class="js-example-basic-single" name="feature">
+                                                        <select class="select-beast" name="feature">
                                                             <option value="TL">Tail Lift</option>
                                                             <option value="LCL">Loose Container Loading</option>
                                                             <option value="AL">Alabama</option>
@@ -491,18 +478,18 @@
                                                 <p>Leg Number 1:</p>
                                                 <div class="col-two-field">
                                                     <div class="bonds-field bonds-field-description">
-                                                        <select class="js-example-basic-single pickup" name="pickup">
+                                                        <select class="select-beast pickup" name="pickup">
                                                             <option value="TL">Pickup</option>
                                                             <option value="AL">Alabama</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
                                                     <label>Bonds Store</label>
-                                                    <select class="bonds-manage-store-select select-hidden"
+                                                    <select class="select-beast bonds-manage-store-select select-hidden"
                                                         name="bond-store">
                                                         <option value="men" selected>Menzies IM - Menzies Imports</option>
                                                         <option value="min">Menzies IM</option>
@@ -517,7 +504,7 @@
                                             <div class="col-two-field">
                                                 <div class="bonds-field col-12 col-sm-6">
                                                     <label>Address Book</label>
-                                                    <select class="bonds-address-book-select select-hidden"
+                                                    <select class="select-beast bonds-address-book-select select-hidden"
                                                         name="address-book">
                                                         <option value="pod" selected>POD</option>
                                                         <option value="pickedup">Picked up</option>
@@ -535,9 +522,9 @@
                                                     <label>Company</label>
                                                     <input type="text" name="company" required>
                                                 </div>
-                                                <div class="bonds-field col-12 col-sm-6">
+                                                <div class="bonds-field col-12 col-sm-6 select-box-right">
                                                     <label>No. of Pallets</label>
-                                                    <select class="bonds-pallets-select select-hidden"
+                                                    <select class="select-beast bonds-pallets-select select-hidden"
                                                         name="pallets">
                                                         <option value="1" selected>1</option>
                                                         <option value="2">2</option>
@@ -578,41 +565,41 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
-                            
+
+
                                         <div class="underline underline-hidemb"></div>
                                         <div class="cost-centre feature leg-number leg-number-2">
-                                            <div class="add-apply-wrapper" data-count="2"> 
-                                                <div class="manage-apply">    
-                                                    <div class="title-leg">  
-                                                        <div class="title-leg-inner title-leg-before">    
+                                            <div class="add-apply-wrapper" data-count="2">
+                                                <div class="manage-apply">
+                                                    <div class="title-leg">
+                                                        <div class="title-leg-inner title-leg-before">
                                                             <p>Leg Number 2:</p>
                                                             <div class="col-two-field">
                                                                 <div class="bonds-field bonds-field-description">
-                                                                    <select class="js-example-basic-single pickup" name="pickup">
+                                                                    <select class="select-beast select-beast pickup" name="pickup">
                                                                         <option value="TL">Pickup</option>
                                                                         <option value="AL">Alabama</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                        </div>    
-                                                        <div class="title-leg-inner title-leg-after"> 
+                                                        </div>
+                                                        <div class="title-leg-inner title-leg-after">
                                                             <p class="subtitle-two">Service Level:</p>
                                                             <div class="col-two-field">
                                                                 <div class="bonds-field bonds-field-description">
-                                                                    <select class="js-example-basic-single pickup" name="pickup">
+                                                                    <select class="select-beast pickup" name="pickup">
                                                                         <option value="STD">STD</option>
                                                                         <option value="AL">Alabama</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                        </div>     
+                                                        </div>
                                                     </div>
-                                            
+
                                                     <div class="col-two-field">
                                                         <div class="bonds-field col-12 col-sm-6">
                                                             <label>Bonds Store</label>
-                                                            <select class="bonds-manage-store-select select-hidden"
+                                                            <select class="select-beast bonds-manage-store-select select-hidden"
                                                                 name="bond-store">
                                                                 <option value="men" selected>Menzies IM - Menzies Imports</option>
                                                                 <option value="min">Menzies IM</option>
@@ -627,7 +614,7 @@
                                                     <div class="col-two-field">
                                                         <div class="bonds-field col-12 col-sm-6">
                                                             <label>Address Book</label>
-                                                            <select class="bonds-address-book-select select-hidden"
+                                                            <select class="select-beast bonds-address-book-select select-hidden"
                                                                 name="aBook">
                                                                 <option value="pod" selected>POD</option>
                                                                 <option value="pickedup">Picked up</option>
@@ -645,9 +632,9 @@
                                                             <label>Company</label>
                                                             <input type="text" name="company" required>
                                                         </div>
-                                                        <div class="bonds-field col-12 col-sm-6">
+                                                        <div class="bonds-field col-12 col-sm-6 select-box-right">
                                                             <label>No. of Pallets</label>
-                                                            <select class="bonds-pallets-select select-hidden"
+                                                            <select class="select-beast bonds-pallets-select select-hidden"
                                                                 name="pallets">
                                                                 <option value="1" selected>1</option>
                                                                 <option value="2">2</option>
@@ -688,7 +675,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
                                             <div class="title-leg title-leg-bottom row">
                                                 <p class="col-12 col-md-6">Please be advised that restrictions apply to additional legs</p>
                                                 <div class="col-12 col-md-6 col-two-field button-right">
@@ -701,121 +688,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="add-job-wrapper">
-                                            <div class="manage-job">
-                                                <div class="title">Manage Job Notifications</div>
-                                                <div class="col-two-field">
-                                                    <div class="bonds-field col-2">
-                                                        <label>Job Status Messaging</label>
-                                                        <select class="bonds-manage-job-select select-hidden"
-                                                            name="eBook[0][bond_manage_job]">
-                                                            <option value="pod" selected>POD</option>
-                                                            <option value="pickedup">Picked up</option>
-                                                            <option value="delay">Driver Delay</option>
-                                                            <option value="confirm">Confirm Job Booking</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="bonds-field col-2">
-                                                        <label>Email / Mobile</label>
-                                                        <select class="bonds-email-phone-select select-hidden"
-                                                            name="eBook[0][bond_email_phone]">
-                                                            <option value="1" selected>Value 1</option>
-                                                            <option value="2">Value 2</option>
-                                                            <option value="3">Value 3</option>
-                                                            <option value="4">Value 4</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-
-                                        <!-- <div class="rt-buttons-controls multi">
-                                            <div class="button-submit not-shadow">
-                                                <input class="cta-button blue" id="add-to-job" type="button" value="Add to Job">
-                                            </div>
-                                            <a class="cta-button yellow not-shadow" id="remove-to-job" href="javascript:void(0);">Manage emails/phone..</a>
-                                        </div>
-
-                                        <div class="template-view responsive-table">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th id="jobStatus"><span>Job Status</span></th>
-                                                        <th>Email / SMS</th>
-                                                        <th class="heading">Permanent</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="select-item">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox">
-                                                                <label></label>
-                                                            </div>
-                                                        </td>
-                                                        <td class="job_status"><b>POD</b></td>
-                                                        <td>joshc@bondstg.com.au</td>
-                                                        <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
-                                                                <option value="n/a" selected>N/A</option>
-                                                                <option value="permanent">Permanent</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="remove-item hide">
-                                                            <a href="Javascript:;">
-                                                                <img src="./assets/images/icons/remove_item.svg">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="select-item">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox">
-                                                                <label></label>
-                                                            </div>
-                                                        </td>
-                                                        <td class="job_status"><b>POD</b></td>
-                                                        <td>01937773942</td>
-                                                        <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
-                                                                <option value="n/a" selected>N/A</option>
-                                                                <option value="permanent">Permanent</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="remove-item hide">
-                                                            <a href="Javascript:;">
-                                                                <img src="./assets/images/icons/remove_item.svg">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="select-item">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox">
-                                                                <label></label>
-                                                            </div>
-                                                        </td>
-                                                        <td class="job_status"><b>Picked Up</b></td>
-                                                        <td>nathanc@bondstg.com.au</td>
-                                                        <td class="select_permanent">
-                                                            <select class="select-hidden" name="eBook[0][bond_permanent]">
-                                                                <option value="n/a" selected>N/A</option>
-                                                                <option value="permanent">Permanent</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="remove-item hide">
-                                                            <a href="Javascript:;#">
-                                                                <img src="./assets/images/icons/remove_item.svg">
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div> -->
 
                                         <div class="st-bonds-buttons">
                                             <a class="cta-button st-prev yellow" href="Javascript:;">Cancel Job Booking</a>

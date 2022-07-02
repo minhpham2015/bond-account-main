@@ -10,11 +10,11 @@ $(document).ready( function() {
 
 function booking_table(){
     $('.template-view table tbody tr').each( function() {
-        
+
         var $field_checkbox = $(this).find('.select-item .checkbox input'),
-            $option_permanent = $(this).find('.select_permanent .options li'),
+            $option_permanent = $(this).find('select[name="eBook[0][bond_permanent]"]'),
             $remove_item = $(this).find('.remove-item a');
-        
+
 
         $field_checkbox.change( function() {
             if( $(this).is(':checked')){
@@ -26,14 +26,13 @@ function booking_table(){
             }
         });
 
-        $option_permanent.click( function(e) {
+        $option_permanent.on('change', function(e) {
             e.preventDefault();
-            var $value = $(this).attr('rel');
-            
-            if( $value == 'permanent'){
-                $(this).parent().siblings('.custom-select').addClass('changed');
+            var $value = $(this).val();
+            if( $value != 'n/a'){
+                $(this).parent().find('.selectize-input').addClass('changed');
             }else{
-                $(this).parent().siblings('.custom-select').removeClass('changed');
+                $(this).parent().find('.selectize-input').removeClass('changed');
             }
         });
         $remove_item.on("click", function(e){

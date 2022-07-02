@@ -1,7 +1,13 @@
 (function( $ ){
 
     $(document).ready( function() {
-        customSelectBox();
+
+        $(".select-beast").selectize({
+          create: false,
+          sortField: "text",
+        });
+
+        //customSelectBox();
         datepicker();
         addapply();
         subMenu();
@@ -9,13 +15,13 @@
         var timepickerFrom = new TimePicker(["#timeFrom","#timeTo", "#timeDelivery", "#timeready"], {
             lang: 'en',
             theme: 'dark'
-          }); 
+          });
 
           timepickerFrom.on('change', function(evt) {
-            
+
             var value = (evt.hour || '00') + ':' + (evt.minute || '00');
-            evt.element.value = value; 
-          
+            evt.element.value = value;
+
           });
 
         $(".your-reference").on("change", function(){
@@ -31,11 +37,11 @@
                     $(this).parents(".bonds-field").find("b").text(0);
                 }
             }
-            
+
         });
-        
+
     });
-    
+
     // Cusom select box to style
     function customSelectBox() {
         // Iterate over each select element
@@ -93,7 +99,7 @@
 
         });
     }
-    
+
 
     function datepicker(){
         $('.datepicker').datepicker({
@@ -111,9 +117,9 @@
             disableTouchKeyboard: true
         });
 
-      
-        
-         
+
+
+
     }
 
     function addapply () {
@@ -124,12 +130,12 @@
             var newCount = count+1;
             wrapper.data("count", newCount);
 
-            var html = '<div class="manage-apply">' +
-            '<div class="title-leg">' +  
+            var html = '<div class="manage-apply manage-apply-'+ newCount +'">' +
+            '<div class="title-leg">' +
                 '<p>Leg Number '+ newCount +':</p>' +
                 '<div class="col-two-field">' +
                     '<div class="bonds-field bonds-field-description">' +
-                        '<select class="js-example-basic-single pickup"'+
+                        '<select class="select-beast pickup"'+
                          'name="pickup">' +
                             '<option value="TL">Pickup</option>' +
                             '<option value="AL">Alabama</option>' +
@@ -139,7 +145,7 @@
                 '<p class="subtitle-two">Service Level:</p>' +
                 '<div class="col-two-field">' +
                     '<div class="bonds-field bonds-field-description">' +
-                        '<select class="js-example-basic-single pickup"'+
+                        '<select class="select-beast pickup"'+
                          'name="pickup">' +
                             '<option value="STD">STD</option>' +
                             '<option value="AL">Alabama</option>' +
@@ -150,7 +156,7 @@
             '<div class="col-two-field">' +
                 '<div class="bonds-field col-12 col-sm-6">' +
                     '<label>Bonds Store</label>' +
-                    '<select class="bonds-manage-store-select select-hidden"' +
+                    '<select class="select-beast bonds-manage-store-select select-hidden"' +
                         'name="bond-store">' +
                         '<option value="men" selected>Menzies IM - Menzies Imports</option>' +
                         '<option value="min">Menzies IM</option>' +
@@ -165,7 +171,7 @@
             '<div class="col-two-field">' +
                 '<div class="bonds-field col-12 col-sm-6">' +
                     '<label>Address Book</label>' +
-                    '<select class="bonds-address-book-select select-hidden"' +
+                    '<select class="select-beast bonds-address-book-select select-hidden"' +
                         'name="aBook">' +
                         '<option value="pod" selected>POD</option>' +
                         '<option value="pickedup">Picked up</option>' +
@@ -183,14 +189,14 @@
                     '<label>Company</label>' +
                     '<input type="text" name="company" required>' +
                 '</div>' +
-                '<div class="bonds-field col-12 col-sm-6">' +
+                '<div class="bonds-field col-12 col-sm-6 select-box-right">' +
                     '<label>No. of Pallets</label>' +
-                    '<select class="bonds-pallets-select select-hidden"' +
+                    '<select class="select-beast bonds-pallets-select select-hidden"' +
                         'name="pallets">' +
                         '<option value="1" selected>1</option>' +
                         '<option value="2">2</option>' +
                         '<option value="3">3</option>' +
-                        '<option value="4">4</option>' +  
+                        '<option value="4">4</option>' +
                     '</select>' +
                 '</div>' +
             '</div>' +
@@ -232,7 +238,14 @@
         '</div>';
 
         wrapper.append(html);
-        customSelectBox();
+        $(".manage-apply-"+newCount+" .select-beast").each(function(){
+
+             $(this).selectize({
+               create: false,
+               sortField: "text",
+             });
+
+        });
         });
 
         $("#remove-to-job").on("click", function(){
@@ -241,7 +254,7 @@
             if(count>=2) {
                 var newCount = count-1;
                 wrapper.data("count", newCount);
-            }    
+            }
             wrapper.find(".manage-apply").each(function( index ) {
                 if ((index+1) == wrapper.find(".manage-apply").length) {
                     $(this).remove();
@@ -249,7 +262,7 @@
             });
         });
     }
-    
+
     function subMenu(){
         $('.info-user.has-children-menu').click( function(e) {
             e.preventDefault();
@@ -261,19 +274,19 @@
         if( $(window).width() > 1200 ){
             $('.item.has-children-menu').click( function(e) {
                 e.preventDefault();
-    
+
                 $(this).toggleClass('active');
             });
         }else{
             $('.item.has-children-menu').click( function(e) {
                 e.preventDefault();
-    
+
                 $(this).find('.sub-menu').slideToggle();
             });
         }
-        
+
     }
 
-    
-    
+
+
     })( jQuery );

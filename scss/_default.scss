@@ -19,7 +19,7 @@ body{
         box-sizing: border-box;
     }
 
-    strong, b{ font-weight: bold; } 
+    strong, b{ font-weight: bold; }
     p { margin: 0 0 12px; }
     img { max-width: 100%; }
     input[type=checkbox], input[type=radio] {
@@ -42,7 +42,7 @@ body{
            }
         }
         &:checked + label {
-            &::before { background: $color-primary; }  
+            &::before { background: $color-primary; }
         }
      }
      input[type=radio] {
@@ -51,7 +51,7 @@ body{
             font-size: 14px;
             line-height: 16px;
             letter-spacing: 0.1em;
-            color: $color-thirdary;    
+            color: $color-thirdary;
            &::before {
                width: 20px; height: 20px;
                border-radius: 100%;
@@ -94,7 +94,7 @@ body{
           font-family: $font-primary;
           padding: 20px;
       }
-  
+
       /* start - remove Arrows/Spinners */
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -103,7 +103,7 @@ body{
       }
       input[type=number] { -moz-appearance: textfield; }
       /* end - remove Arrows/Spinners */
-  
+
       /* start - style button submit */
       input[type=submit], input[type=button],
       button, .btn, .cta-button{
@@ -155,7 +155,7 @@ body{
             &:after{ display: none; }
           }
       }
-     
+
       .cta-button{
             position: relative;
             z-index: 1;
@@ -202,7 +202,7 @@ body{
             margin: 0;
             width: 100%;
             word-break: break-all;
-  
+
           &::-webkit-scrollbar {
             width:5px;
             height:5px;
@@ -222,7 +222,7 @@ body{
                 text-align: center;
             }
           }
-  
+
       }
       tr {
           &:nth-child(2n) {
@@ -256,7 +256,7 @@ body{
           @media (max-width: $scr-tablet) {
               padding: 15px;
               white-space: nowrap;
-          } 
+          }
       }
       td { color: #7C7C7C;}
       th { font-weight: bold; }
@@ -265,22 +265,22 @@ body{
       @media (max-width: $scr-mb){
         input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), textarea {
           padding: 16px 24px;
-          height: 48px;    
+          height: 48px;
         }
-        input[type=submit], input[type=button], 
+        input[type=submit], input[type=button],
         button, .btn, .cta-button{
           min-height: 54px;
           min-width: 190px;
           padding: 16px 24px;
           font-size: 16px;
         }
-        textarea {   
+        textarea {
           padding: 10px 24px;
         }
       }
 
       @media (max-width: 599.98px){
-        input[type=submit], input[type=button], 
+        input[type=submit], input[type=button],
         button, .btn, .cta-button{
           min-height: 48px;
           min-width: 130px;

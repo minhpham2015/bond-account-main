@@ -1,0 +1,43 @@
+.selectize-input {
+     width: 100%;
+     border-radius: 10px;
+     border: 1px solid #294AA2;
+     height: 73px;
+     padding: 30px 50px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     font-size: 14px;
+     line-height: 16px;
+     font-weight: 400;
+     letter-spacing: 0.1em;
+     color: #000000;
+     background: #FFFFFF;
+     outline: none;
+     box-shadow: none;
+     width: calc(100% - 37.5px);
+     input[type="text"]{
+       height: auto !important;
+     }
+     @media (max-width: 768px){
+       width: 100%;
+     }
+}
+
+.select-box-right .selectize-control{
+  text-align: right;
+  .selectize-input,.selectize-dropdown{
+    text-align: left;
+  }
+}
+
+.leg-number .bonds-field-description{
+  .selectize-control{
+    .selectize-input{
+      padding: 10px;
+      height: auto;
+      width: 100%;
+      padding-right: 33px;
+    }
+  }
+}

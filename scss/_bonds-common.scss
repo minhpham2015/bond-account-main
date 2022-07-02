@@ -1,7 +1,7 @@
 @import "variable";
 .bonds-wrap-page{
     background: #FFFFFF;
-    padding: 0;    
+    padding: 0;
     .menu-col{
         transition: .3s ease all;
         padding: 0;
@@ -14,7 +14,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: sticky;    
+            position: sticky;
             &__logo{
                 text-align: center;
                 img{
@@ -348,7 +348,7 @@
                                     font-weight: 700;
                                     font-size: 12px;
                                     line-height: 36px;
-                                    color: #294AA2;  
+                                    color: #294AA2;
                                 }
                             }
                         }
@@ -370,25 +370,25 @@
                 color: #FFFFFF;
             }
 
-            form{  
+            form{
                 .template-form{
-                    .booking-details {  
-                        input:-webkit-autofill,  
+                    .booking-details {
+                        input:-webkit-autofill,
                         textarea:-webkit-autofill,
                         select:-webkit-autofill {
                             -webkit-box-shadow: 0 0 0 1000px #f5f5f5 inset !important;
-                            -webkit-text-fill-color: #000000 !important;  
+                            -webkit-text-fill-color: #000000 !important;
                         }
                     }
                     .cost-centre {
                         padding-bottom: 60px;
                     }
                     .feature {
-                        padding-top: 40px;    
+                        padding-top: 40px;
                     }
                     .leg-number {
-                        border-top: 0; 
-                        margin-top: 0; 
+                        border-top: 0;
+                        margin-top: 0;
                         .title-leg {
                             display: flex;
                             background: rgba(194, 209, 217, 0.2);
@@ -424,24 +424,32 @@
                                     color: #fff;
                                     min-width: 150px;
                                     width: auto;
-                                    text-align: center; 
+                                    text-align: center;
                                 }
                                 #remove-to-job {
                                     margin-left: 15px;
                                     text-decoration: none;
                                 }
-                                .custom-select-wrap {
+                                .selectize-control {
                                     height: 36px;
                                     width: 127px;
-                                    .custom-select {
+                                    .selectize-input {
                                         color: #fff;
                                         background: #F5AF02;
-                                        padding: 10px 22px 10px 38px;
-                                        border: none;  
+                                        padding: 10px 22px 10px 10px;
+                                        border: none;
                                         &:after {
-                                            background-image: url(../images/icons/Polygon14.svg);
-                                            top: 12px;
-                                            right: 12px;
+                                          content: "";
+                                          width: 9px;
+                                          height: 9px;
+                                          background-image: url(../images/icons/select-w.svg);
+                                          background-repeat: no-repeat;
+                                          position: absolute;
+                                          background-size: contain;
+                                          top: 17px;
+                                          right: 10px;
+                                          transition: ease .25s all;
+                                          border: none;
                                         }
                                     }
                                 }
@@ -465,7 +473,7 @@
                                 margin-right: 0;
                             }
                             .button-right {
-                                justify-content: right;   
+                                justify-content: right;
                             }
                         }
                     }
@@ -550,7 +558,7 @@
                                 top: 0;
                                 padding: 0;
                             }
-                            .input-group-append {   
+                            .input-group-append {
                                 position: absolute;
                                 top: 15px;
                                 right: 45px;
@@ -644,8 +652,8 @@
                                 }
                             }
                         }
-                        .col-12{  
-                            input, .custom-select-wrap, .content, textarea, .btn-group { 
+                        .col-12{
+                            input, .custom-select-wrap, .content, textarea, .btn-group {
                                 width: calc(100% - 37.5px);
                                 height: 73px;
                                 .btn-secondary {
@@ -677,7 +685,7 @@
                                         right: 24px;
                                         -webkit-transition: ease .25s all;
                                         transition: ease .25s all;
-                                    } 
+                                    }
                                     &:after {
                                         display: none;
                                     }
@@ -696,7 +704,7 @@
                                         padding: 8px 22px;
                                         border-bottom: 1px solid rgba(112, 112, 112, 0.11);
                                         font-weight: 400;
-                                        font-size: 14px;   
+                                        font-size: 14px;
                                         line-height: 16px;
                                         letter-spacing: 0.1em;
                                         &:hover {
@@ -704,16 +712,16 @@
                                             a {
                                                 color: #ffffff;
                                                 &:hover {
-                                                    background: #294AA2; 
+                                                    background: #294AA2;
                                                 }
                                             }
                                         }
                                     }
                                 }
-                            }  
+                            }
                             textarea {
                                 position: relative;
-                            }  
+                            }
                             textarea::-webkit-scrollbar-track
                             {
                                 border-radius: 10px;
@@ -751,7 +759,7 @@
                             // }
                             &:last-child{
                                 label {
-                                    left: 70px;  
+                                    left: 70px;
                                 }
                                 .form-check-label {
                                     left: 0;
@@ -760,7 +768,7 @@
                                     margin-left: 37.5px;
                                 }
                                 .time-to {
-                                    margin-left: 0;     
+                                    margin-left: 0;
                                 }
                                 .content {
                                     margin-left: 37.5px;
@@ -770,7 +778,7 @@
                         .col-12.bonds-field-description {
                             input, .custom-select-wrap {
                                 margin-left: 0px !important;
-                            }     
+                            }
                         }
                     }
 
@@ -867,7 +875,7 @@
                                         color: #000000;
                                     }
                                     &.select_permanent{
-                                        .custom-select-wrap{
+                                        .custom-select-wrap,.selectize-control{
                                             position: relative;
                                             height: 35px;
                                             width: 127px;
@@ -875,7 +883,7 @@
                                             .select-hidden{
                                                 visibility: hidden;
                                             }
-                                            .custom-select{
+                                            .custom-select,.selectize-input{
                                                 position: absolute;
                                                 background: #294AA2;
                                                 top: 0;
@@ -896,8 +904,11 @@
                                                 padding: 10px 23px;
                                                 text-align: center;
                                                 cursor: pointer;
+                                                height: auto;
+                                                width: 100%;
                                                 &.changed{
                                                     background: #F5AF02;
+                                                    border: none;
                                                 }
                                                 &:after{
                                                     content: "";
@@ -910,6 +921,7 @@
                                                     top: 14px;
                                                     right: 5px;
                                                     transition: ease .25s all;
+                                                    border: none;
                                                 }
                                             }
                                             .options{
@@ -924,7 +936,7 @@
                                                 z-index: 999;
                                                 top: 30px;
                                                 left: 0;
-                                                li{ 
+                                                li{
                                                     cursor: pointer;
                                                     padding: 8px;
                                                     font-weight: 400;
@@ -1017,7 +1029,7 @@
                 }
                 .title-leg-bottom {
                     p {
-                        
+
                     }
                     .col-two-field {
                         justify-content: center;
@@ -1031,7 +1043,7 @@
         }
         @media (max-width: $scr-mb){
             padding-top: 82px;
-            .top-bar{ 
+            .top-bar{
                 padding: 12px 16px;
             }
             .bonds-body-wrap {
@@ -1059,7 +1071,7 @@
                         .title-leg {
                             .custom-select-wrap {
                                 select {
-                                    padding: 12px 24px !important;  
+                                    padding: 12px 24px !important;
                                 }
                             }
                         }
@@ -1087,8 +1099,8 @@
                         }
                         .bonds-field-description {
                             &:last-child{
-                                margin-left: 0;   
-                            }   
+                                margin-left: 0;
+                            }
                         }
                         .bonds-field {
                             .content {
@@ -1100,7 +1112,7 @@
                                 font-size: 13px;
                             }
                             .input-group-append {
-                                top: 7px;  
+                                top: 7px;
                             }
                             .custom-select-wrap {
                                 height: 48px !important;
@@ -1118,8 +1130,8 @@
                                     outline: none;
                                     width: 100%;
                                     padding: 15px 24px;
-                                   
-        
+
+
                                     -moz-appearance:none; /* Firefox */
                                     -webkit-appearance:none; /* Safari and Chrome */
                                     appearance:none;
@@ -1128,7 +1140,7 @@
                                     font-weight: 400;
                                     letter-spacing: 0.1em;
                                     color: #000000;
-        
+
                                     background-image: url(../images/icons/ic_select.svg);
                                     background-repeat: no-repeat;
                                     background-position: 95% center;
@@ -1172,7 +1184,7 @@
                             }
                             .sub-menu {
                                 z-index: 9;
-                            }    
+                            }
                         }
                     }
                 }
@@ -1200,7 +1212,7 @@
                                 margin-top: 32px;
                                 input, .custom-select-wrap, textarea {
                                     margin-left: 0;
-                                }    
+                                }
                                 label {
                                     left: 16px;
                                 }
@@ -1221,18 +1233,18 @@
                             text-align: center;
                             padding: 0;
                             .subtitle-two {
-                                margin-left: 0 !important;  
+                                margin-left: 0 !important;
                             }
                             .title-leg-inner {
                                 justify-content: center;
                             }
                         }
-                    }           
+                    }
                 }
             }
         }
         @media (max-width: 424.98px){
-           
+
             .bonds-body-wrap {
                 form {
                     .template-form {
